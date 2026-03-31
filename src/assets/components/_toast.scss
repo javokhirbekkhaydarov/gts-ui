@@ -1,0 +1,51 @@
+.p-toast .p-toast-message {
+  box-shadow: 0 8px 10px 1px #00000008;
+  backdrop-filter: blur(18px);
+  background: #ffffff;
+  border-color: #ffffff;
+  border-radius: 8px;
+  svg.p-toast-message-icon {
+    display: none !important;
+  }
+  .p-toast-summary {
+    color: var(--main-text-color)
+  }
+  .p-toast-icon-close-icon {
+    color: var(--main-text-color) !important;
+  }
+  &.p-toast-message-success, &.p-toast-message-error, &.p-toast-message-warn {
+    &::before {
+      content: '';
+      position: absolute;
+      width: 3px;
+      height: calc(100% - 16px);
+      background: var(--text-additional-green);
+      box-shadow: 1px 1px 2px 0 #3DD5983D;
+      border-radius: 10px;
+      left: 8px;
+      top: 8px;
+    }
+  }
+
+  &.p-toast-message-error::before {
+    background: var(--danger-pink-color);
+    box-shadow: 1px 1px 2px 0 #F2376F3D;
+  }
+  &.p-toast-message-warn::before {
+    background: var(--text-additional-yellow);
+    box-shadow: 1px 1px 2px 0 #ca8a043d;
+  }
+  .p-toast-detail {
+    margin: 0;
+    line-height: 20px;
+  }
+  .p-toast-summary {
+    line-height: 24px;
+  }
+}
+
+@media (width <=750px){
+  .p-toast{
+    width: 90% !important;
+  }
+}

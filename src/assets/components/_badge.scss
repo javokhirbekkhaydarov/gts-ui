@@ -1,0 +1,39 @@
+.p-badge-secondary {
+  background: var(--background-neutral-default);
+  color: var(--text-subtle);
+}
+
+.p-badge-danger {
+  background: var(--d-background-accent-red-sublest);
+  color: var(--text-accent-red-red);
+}
+
+.p-badge-success {
+  background: var(--background-accent-green-subtlest);
+  color: var(--text-green-bolder);
+}
+
+.p-badge-info {
+  background: var(--background-accent-navy-subtlest);
+  color: var(--text-accent-purple-bold);
+}
+
+.p-badge-warning{
+  background: var(--background-accent-orange-subtlest);
+  color: var(--text-accent-orange-default);
+}
+
+.p-badge-contrast{
+  background: var(--background-information-default);
+  color:var(--text-accent-blue);
+}
+
+.p-badge{
+  height: 32px;
+  min-width:32px;
+  padding:0 10px;
+  justify-content:center;
+  display:flex;
+  width: fit-content;
+  align-items: center;
+}

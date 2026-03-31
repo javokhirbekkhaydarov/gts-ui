@@ -1,0 +1,63 @@
+.section {
+  border-radius: 8px;
+  padding: 16px;
+  gap: 16px;
+  display: flex;
+
+  &-information {
+    background-color: var(--background-information-default);
+
+    .section-icon {
+      color: var(--icon-information) !important;
+    }
+  }
+
+  &-success {
+    background-color: var(--background-accent-green-subtlest);
+
+    .section-icon {
+      color: var(--icon-accent-green) !important;
+    }
+  }
+
+  &-warning {
+    background-color: var(--background-accent-orange-subtlest);
+
+    .section-icon {
+      color: var(--icon-warning) !important;
+    }
+  }
+
+  &-error {
+    background-color: var(--background-accent-red-subtlest);
+
+    .section-icon {
+      color: var(--icon-danger) !important;
+    }
+  }
+
+  &-discovery {
+    background-color: var(--background-accent-navy-subtlest);
+
+    .section-icon:before {
+      color: var(--icon-discover) !important;
+    }
+  }
+
+  &-main {
+    &-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-default);
+      margin: 0;
+    }
+
+    &-desc {
+      font-size: 14px;
+      line-height: 20px;
+      color: var(--text-default);
+      margin: 9px 0 0 0;
+      font-weight: 400
+    }
+  }
+}

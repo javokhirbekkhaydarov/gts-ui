@@ -1,0 +1,7 @@
+.css-xzp052 {
+  height: 420px;
+  background: #F7F8F9;
+  .dark-mode & {
+    background: var(--elevation-surface-blanket)
+  }
+}

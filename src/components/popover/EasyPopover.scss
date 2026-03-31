@@ -1,0 +1,37 @@
+.easy-popover {
+  position: relative;
+  .content {
+    position: absolute;
+    background: var(--background-accent-gray-default);
+    color: var(--text-inverse);
+    padding: 12px;
+    border-radius: 8px;
+    top: -13px;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    width: max-content;
+    &::after {
+      content: "";
+      position: absolute;
+      top: auto;
+      bottom: -9px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 8px 8px 2px 8px;
+      border-color: var(--background-accent-gray-default) transparent transparent transparent;
+    }
+  }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}

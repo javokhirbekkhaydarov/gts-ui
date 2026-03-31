@@ -1,0 +1,160 @@
+.easy-button {
+  font-weight: 600;
+  background: var(--background-brand-bold-default);
+  border-color: var(--background-brand-bold-default);
+  color: var(--elevation-surface-overlay);
+  justify-content: center;
+  &.p-button .p-button-label {
+    white-space: nowrap;
+  }
+  &.p-button-danger {
+    background: var(--background-danger-default);
+    border-color: var(--background-danger-default);
+  }
+  &.p-button-secondary {
+    background: var(--background-neutral-default);
+    border-color: var(--background-neutral-default);
+    color: var(--text-default);
+  }
+  &.p-button-info {
+    background: var(--background-selected-default);
+    border-color: var(--background-selected-default);
+    color: var(--link-default);
+  }
+  &.p-button-help {
+    background: var(--background-accent-red-subtler);
+    border-color: var(--background-accent-red-subtler);
+    color: var(--background-danger-default);
+  }
+  &.p-button-outlined {
+    background: transparent;
+    color: var(--text-subtle);
+    border-color: var(--border-bold);
+  }
+  &.p-button-plain {
+    background: transparent;
+    border-color: transparent;
+    color: var(--text-default);
+  }
+  &.p-button-loading {
+    .p-button-label {
+      flex: none;
+    }
+  }
+
+  // hover styles
+  &:hover{
+    background: var(--background-brand-bold-hovered);
+    border-color: var(--background-brand-bold-hovered);
+    &.p-button-danger {
+      background: var(--background-danger-hovered);
+      border-color: var(--background-danger-hovered);
+    }
+    &.p-button-secondary {
+      background: var(--background-neutral-hovered);
+      border-color: var(--background-neutral-hovered);
+    }
+    &.p-button-info {
+      background: var(--background-selected-hovered);
+      border-color: var(--background-selected-hovered);
+      color: var(--link-hovered);
+    }
+    &.p-button-help {
+      background: var(--background-accent-red-subtle);
+      border-color: var(--background-accent-red-subtle);
+    }
+    &.p-button-outlined {
+      background: var(--background-neutral-default);
+      color: var(--text-subtle);
+      border-color: var(--border-bold);
+    }
+    &.p-button-plain {
+      background: var(--background-neutral-default);
+      color: var(--text-default);
+      border-color: var(--background-neutral-default);
+    }
+  }
+
+  // pressed styles
+  &:active, &:focus {
+    background: var(--background-brand-bold-pressed);
+    border-color: var(--background-brand-bold-pressed);
+    &.p-button-danger {
+      background: var(--background-danger-pressed);
+      border-color: var(--background-danger-pressed);
+    }
+    &.p-button-secondary {
+      background: var(--background-neutral-pressed);
+      border-color: var(--background-neutral-pressed);
+    }
+    &.p-button-info {
+      background: var(--background-selected-pressed);
+      border-color: var(--background-selected-pressed);
+      color: var(--link-hovered);
+    }
+    &.p-button-help {
+      background: var(--background-accent-red-subtle);
+      border-color: var(--background-accent-red-subtle);
+    }
+    &.p-button-outlined {
+      background: var(--background-neutral-default);
+      color: var(--text-subtle);
+      border-color: var(--border-bold);
+    }
+    &.p-button-plain {
+      background: var(--background-neutral-default);
+      color: var(--text-default);
+      border-color: var(--background-neutral-default);
+    }
+  }
+
+  &.p-disabled:not(.p-button-loading) {
+    background: var(--background-neutral-disabled);
+    border-color: var(--background-neutral-disabled);
+    color: var(--text-disabled);
+  }
+  .p-button-icon {
+    font-size: 20px;
+  }
+  .p-button-loading-icon {
+    animation: rotate 1s linear infinite;
+  }
+  &.square {
+    border-radius: 8px;
+  }
+  &.sm {
+    font-size: 14px;
+    height: 32px;
+    .p-button-icon {
+      font-size: 16px;
+    }
+    &.square {
+      border-radius: 6px;
+    }
+  }
+
+  &.md {
+    font-size: 14px;
+    height: 40px;
+  }
+
+  &.lg {
+    font-size: 16px;
+    height: 44px;
+  }
+
+  &.xl {
+    font-size: 16px;
+    height: 48px;
+  }
+
+  &.xxl {
+    font-size: 18px;
+    height: 60px;
+    font-weight: 700;
+    .p-button-icon {
+      font-size: 24px;
+    }
+  }
+
+}

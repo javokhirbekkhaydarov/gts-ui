@@ -1,0 +1,18 @@
+@use 'primevue/resources/themes/aura-light-green/theme.css';
+@use './colors';
+@use './fonts';
+@use './utils';
+@use './components/toast';
+@use './components/table';
+@use './components/switch';
+@use './components/easy-slider';
+@use './components/badge';
+
+/* Import icomoon font */
+@import './icomoon/style.css';
+
+
+body *:not([class^='path']) {
+  font-family: 'Mulish', sans-serif;
+}
+

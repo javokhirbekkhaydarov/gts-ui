@@ -1,0 +1,24 @@
+.p-inputswitch{
+  width: 32px;
+  height: 16px;
+
+  &-slider {
+    background-color: var(--background-neutral-bold-default);
+
+    &::before {
+      width: 12px;
+      height: 12px;
+      background-color: var(--elevation-surface-overlay);
+      margin-top: -5.9px;
+      left: 2.3px;
+    }
+  }
+}
+
+.p-highlight .p-inputswitch-slider {
+  background-color: var(--border-focused);
+
+  &::before {
+    transform: translateX(15px);
+  }
+}

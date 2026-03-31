@@ -1,0 +1,11 @@
+.p-overlaypanel {
+  box-shadow: 0 1px 2px 0 #1018280F;
+  background: var(--elevation-surface-overlay);
+  border: none;
+  &::before, &::after {
+    display: none;
+  }
+  &-content {
+    color: var(--text-default);
+  }
+}

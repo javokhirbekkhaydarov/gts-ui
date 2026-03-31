@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "strict": true,
+    "jsx": "preserve",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "outDir": "dist",
+    "lib": ["ESNext", "DOM"],
+    "types": ["node"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "gts-ui": ["types/gts-ui.d.ts"]
+    }
+  },
+  "include": ["env.d.ts", "src/**/*"],
+  "exclude": ["node_modules", "dist", "src/**/*.stories.ts", "src/router", "src/views", "src/App.vue"]
+}

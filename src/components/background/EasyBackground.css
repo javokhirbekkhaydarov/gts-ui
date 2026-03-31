@@ -1,0 +1,45 @@
+.easy-background {
+  width: 100%;
+  height: 100%;
+}
+
+.easy-background--shadow {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.dynamic-bg {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: var(--elevation-surface-default) !important;
+}
+
+.sphere {
+  border-radius: 100%;
+  position: absolute;
+  box-shadow: var(--d-background-shadow);
+}
+.violet {
+  box-shadow: var(--d-background-violet-shadow);
+  background: var(--d-background-violet);
+}
+.grey {
+  background: var(--d-background-grey);
+  border: 1.5px solid;
+  border-image-source: var(--d-background-grey-border);
+  box-shadow: var(--d-background-grey-shadow)
+
+}
+.blue {
+  background: var(--d-background-blue)
+}
+.green {
+  background: var(--d-background-green);
+}
+.violet {
+  background-image: var(--d-background-pink);
+}

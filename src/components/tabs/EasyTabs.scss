@@ -1,0 +1,83 @@
+
+.easy-tabs {
+  height: 48px;
+  display: grid;
+  justify-content: start;
+  grid-auto-flow: column;
+  background: transparent;
+  position: relative;
+  box-sizing: border-box;
+  backdrop-filter: blur(50px);
+  min-width: unset !important;
+  width: 100%;
+  border-bottom: 2px solid var(--border-default);
+  @for $i from 1 through 10 {
+    &:has(:checked:nth-of-type(#{$i})) {
+      --active: #{$i - 1};
+    }
+  }
+
+  .label {
+    padding: 0 16px;
+    cursor: pointer;
+    text-align: center;
+    height: 100%;
+    place-items: center;
+    color: var(--text-subtle);
+    transition: background, color;
+    transition-duration: 0.25s;
+    transition-timing-function: var(--ease, ease);
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    user-select: none;
+    &__text {
+      white-space: nowrap;
+    }
+    &.active {
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 100%;
+        height: 2px;
+        background: var(--border-selected);
+      }
+    }
+    i {
+      font-size: 24px;
+    }
+    &.disabled {
+      pointer-events: none;
+      cursor: not-allowed;
+      color: var(--text-disabled);
+
+    }
+  }
+  input[type="radio"]:checked + label {
+    color: var(--text-default);
+    font-weight: 600;
+    i {
+      color: var(--text-default) !important
+    }
+  }
+  &.big {
+    height: 54px;
+  }
+}
+.easy-tabs > .input,
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

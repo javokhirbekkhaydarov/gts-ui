@@ -1,0 +1,42 @@
+.airline-autocomplete {
+  .dropdown {
+    position: relative;
+    .p-listbox, .empty {
+      background: var(--elevation-surface-overlay);
+      box-shadow: 0 1px 3px 0 #1018281A;
+      border: none;
+      border-radius: 8px;
+      position: absolute;
+      top: 5px;
+      width: 100%;
+      z-index: 2;
+      &-item {
+        color: var(--text-default);
+      }
+      ::-webkit-scrollbar {
+        max-height: 30%;
+        height: 100%;
+        width: 4px;
+        border-radius: 10px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: var(--border-bold);
+        border-radius: 10px;
+        padding-right: 15px;
+      }
+    }
+    .empty {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      text-align: center;
+      color: var(--text-subtlest);
+    }
+    .p-listbox:not(.p-disabled) .p-listbox-item:not(.p-highlight):not(.p-disabled):hover {
+      background: var(--background-neutral-subtle-hovered);
+    }
+    .p-listbox .p-listbox-list .p-listbox-item.p-highlight {
+      background: var(--background-neutral-subtle-pressed);
+    }
+  }
+}

@@ -1,0 +1,34 @@
+.avatar {
+  position:relative;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  box-sizing: border-box;
+  background-size: cover;
+  background-position: center;
+
+  &.bordered {
+    border: 4px solid var(--navy-50);
+  }
+
+  .initials {
+    font-size: calc(var(--size) * 0.35);
+  }
+  .online {
+    position:absolute;
+    background: var(--icon-success);
+    border-radius: 100%;
+    width: calc(var(--size) * 0.25);
+    height: calc(var(--size) * 0.25);
+    right: 0;
+    bottom: 0;
+    &.company {
+      background-color: var(--navy-100);
+      background-size: cover;
+      width: calc(var(--size) * 0.32);
+    height: calc(var(--size) * 0.32);
+    }
+  }
+}

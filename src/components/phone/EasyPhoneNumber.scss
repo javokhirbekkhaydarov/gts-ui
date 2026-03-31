@@ -1,0 +1,91 @@
+.easy-phone-number {
+  display: flex;
+  align-items: center;
+  .easy-input .p-inputtext, .easy-input.small .p-inputtext {
+    border-radius: 0 8px 8px 0;
+  }
+  &__trigger {
+    // width: 100px;
+    text-align: center;
+    border: 1px solid var(--border-bold);
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px 0 0 8px;
+    border-right-color: transparent;
+    background: var(--background-input-default);
+    font-size: 15px;
+    color: var(--text-subtle);
+    cursor: pointer;
+    gap: 8px;
+    padding-inline: 8px;
+    justify-content: flex-end;
+    padding-left: 16px;
+    &:hover {
+      border: 1px solid var(--border-focused);
+    }
+    &.small {
+      height: 40px;
+      font-size: 14px;
+    }
+    &.disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    &.readonly {
+      pointer-events: none;
+    }
+    &.invalid {
+      border: 1px solid var(--border-danger);
+      border-right-color: transparent;
+    }
+  }
+  &__list {
+    max-height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-top: 4px;
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    height: 44px;
+    padding-inline: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    min-width: 250px;
+    &:hover {
+      background-color: var(--background-neutral-subtle-hovered);
+    }
+    &.active {
+      background-color: var(--background-neutral-subtle-pressed);
+    }
+  }
+  &__flag {
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    background-size: 200%;
+    background-position: center;
+    margin-right: 12px;
+    border: 1px solid var(--border-bold);
+  }
+  &__name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 200px;
+    color: var(--text-subtle);
+  }
+  &__code {
+    color: var(--text-subtle);
+  }
+  &__op {
+    .p-overlaypanel-content {
+      padding: 8px;
+    }
+  }
+}

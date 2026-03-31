@@ -1,0 +1,19 @@
+.p-datatable-table  {
+
+  tr, th, td {
+    background-color: transparent;
+    border-bottom: 1px solid var(--border-default)
+  }
+
+  .p-column-title {
+    color: var(--text-subtle);
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .easy-table-row {
+    font-size: 14px;
+    color: var(--text-default);
+    font-weight: 500;
+  }
+}

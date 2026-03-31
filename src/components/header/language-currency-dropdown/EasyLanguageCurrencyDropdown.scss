@@ -1,0 +1,86 @@
+.easy-currency-language-button {
+  width: 120px;
+  height: 32px;
+  border: none !important;
+  padding: 8px 12px;
+
+  .p-button-icon-left {
+    margin-right: 7px;
+  }
+
+  .p-button-icon {
+    width: 16px;
+    height: 16px;
+    color: var(--text-subtle);
+  }
+
+  .p-button-label {
+    color: var(--text-subtle);
+    font-weight: 600;
+    white-space: nowrap;
+    text-align: left;
+  }
+  &:hover .p-button-label, &:hover .p-button-icon {
+    color: var(--text-default);
+  }
+}
+
+.easy-currency-language-overplay {
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  overflow: hidden;
+
+  .p-overlaypanel-content {
+    padding: 8px !important;
+  }
+
+  .p-button {
+    height: 44px !important;
+    padding: 0 38px !important;
+
+    &.p-button-component {
+      margin: 0;
+    }
+
+    &-label {
+      flex: 0;
+      margin: 0
+    }
+  }
+
+  .wrapper {
+    max-height: calc(5 * 44px);
+    overflow-y: auto;
+
+    p {
+      margin: 0;
+    }
+
+    .option {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      height: 44px;
+      padding: 10px 12px;
+      border-radius: 8px;
+
+      &:hover {
+        background: var(--background-neutral-subtle-hovered);
+      }
+
+      &.active {
+        background: var(--background-neutral-subtle-pressed);
+      }
+    }
+  }
+}
+
+.isCurrencyLanguageDropdownOpen {
+  background-color: var(--background-neutral-default) !important;
+
+  .p-button-icon,
+  .p-button-label {
+    color: var(--text-default) !important;
+  }
+}

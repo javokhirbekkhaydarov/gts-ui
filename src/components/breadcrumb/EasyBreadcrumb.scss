@@ -1,0 +1,46 @@
+.easy-breadcrumb {
+
+  @mixin link-item {
+    font-size: 14px;
+    text-decoration: none;
+    &:first-letter {
+      text-transform: capitalize;
+    }
+  }
+
+  .p-breadcrumb{
+    background: transparent;
+  }
+
+  .link {
+    color: var(--text-subtle);
+    border-radius: 6px;
+    @include link-item;
+  }
+
+  .p-menuitem-separator {
+    font-size: 14px;
+    position: relative;
+    top: 2px;
+  }
+
+  .p-icon {
+    font-size: 14px;
+    color: red;
+  }
+
+  .last {
+    color: var(--text-subtlest);
+    @include link-item;
+  }
+
+  .home {
+    text-decoration: none;
+    color: var(--icon-subtlest);
+    position: relative;
+    top:1.5px;
+  }
+  .p-breadcrumb-list{
+    width : fit-content;
+  }
+}

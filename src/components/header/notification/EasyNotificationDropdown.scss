@@ -1,0 +1,201 @@
+.easy-notification-dropdown {
+  .trigger {
+    display: flex;
+    width: fit-content;
+    .p-button {
+      position: relative;
+      overflow: initial;
+      height: auto !important;
+      border: none !important;
+      box-sizing: border-box;
+      padding: 3px;
+
+      .icon {
+        color: var(--icon-subtle) !important;
+      }
+
+      .notification-count {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(20%, -20%);
+        font-size: 12px;
+        border-radius: 8px;
+        background-color: var(--background-discovery-default);
+        color: var(--text-inverse);
+        padding: 2px 6px;
+      }
+    }
+
+    .no-background {
+      background-color: transparent !important;
+    }
+  }
+}
+
+.easy-notification-overplay {
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  overflow: hidden;
+
+  .p-overlaypanel-content {
+    padding: 0 0 10px 0;
+    width: 540px !important;
+
+    .event-wrap {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+
+      &-count {
+        background-color: var(--background-neutral-default);
+        font-size: 12px;
+        color: var(--text-default);
+        border-radius: 8px;
+        padding: 2px 6px;
+        margin: 0;
+      }
+    }
+
+    .dropdown-header-navigation {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 9px 20px;
+      border-bottom: 2px solid var(--border-default);
+
+      .p-button {
+        height: auto !important;
+        border: none !important;
+        padding: 8px
+      }
+
+      &-title {
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--text-default);
+        margin: 0;
+      }
+    }
+
+    .tabs-container {
+      border-bottom: 2px solid var(--border-default);
+      padding: 0 6px;
+
+      .easy-tabs {
+        height: 38px;
+        width: 60%;
+        padding: 0;
+
+        .label {
+          border: none !important;
+          font-weight: 600;
+          height: 40px;
+        }
+
+        &::after {
+          top: 12px;
+        }
+      }
+    }
+
+    .event-container {
+      padding: 9px;
+      max-height: 500px;
+      min-height: 336px;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+
+      .event-item {
+        padding: 12px;
+        gap: 16px;
+        display: flex;
+        justify-content: space-between;
+        &:not(:last-child) {
+          border-bottom: 1px solid var(--border-default);
+        }
+
+        &-icon {
+          min-width: 40px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 100px;
+          background-color: var(--background-accent-green-subtlest);
+
+          .icon-Bold-Document {
+            color: var(--icon-accent-green) !important;
+          }
+        }
+
+        &-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          &-title {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 600;
+          }
+
+          &-subtitle {
+            color: var(--text-accent-purple-bold);
+            font-size: 12px;
+            margin: 5px 0 0 0;
+            font-weight: 500;
+          }
+
+          &-time {
+            font-size: 12px;
+            color: var(--text-subtle);
+          }
+        }
+
+        &-main {
+          max-width: 428px;
+        }
+
+        &-desc {
+          color: var(--text-subtle);
+          font-size: 14px;
+          line-height: 20px;
+          margin-bottom: 0;
+        }
+      }
+
+      .no-notification-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100% !important;
+        flex-grow: 1;
+        justify-content: center;
+
+
+        &-img {
+          width: 112px;
+          height: 116px;
+          object-fit: cover;
+        }
+
+        &-title {
+          font-size: 16px;
+          font-weight: 600;
+          text-align: center;
+          color: var(--text-default);
+          margin: 12px 0 0 0;
+        }
+
+        &-subtitle {
+          font-size: 14px;
+          color: var(--text-subtle);
+          margin: 8px 0 0 0;
+        }
+      }
+    }
+  }
+}

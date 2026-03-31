@@ -1,0 +1,132 @@
+.easy-input-number {
+  position: relative;
+  height: 48px;
+  display: block;
+  &.p-float-label > label{
+    color: var(--text-subtle);
+    font-size: 16px;
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transition: 0.2s;
+  }
+  .p-input-icon {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+  }
+  .prefix {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    width: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    i {
+      font-size: 20px;
+      color: var(--text-subtle);
+    }
+  }
+  &.has-prefix {
+    .p-inputtext {
+      padding-left: 36px;
+    }
+    & > label, &:has(.p-password) label {
+      left: 36px;
+    }
+  }
+  &.p-float-label:has(.p-inputwrapper-filled) label,
+  &.p-float-label:has(input:focus) label,
+  &.p-float-label:has(input.p-filled) label{
+    top: 13px;
+    font-size: 12px;
+  }
+  &.p-float-label:has(input.p-filled) label{
+    color: var(--text-subtlest)
+  }
+  &.p-float-label:has(.p-invalid) label{
+    color: var(--border-danger);
+  }
+  &.p-float-label:has(.p-invalid) .p-inputtext{
+    border-color: var(--border-danger);
+  }
+  &.p-float-label:has(input:focus) label {
+    color: var(--border-focused);
+  }
+  .p-inputnumber {
+    width: 100%;
+  }
+  .p-inputtext {
+    height: 48px;
+    border-radius: 8px;
+    border: 1px solid var(--border-bold);
+    background: var(--background-input-default);
+    font-size: 16px;
+    color: var(--text-subtle);
+    box-sizing: border-box;
+    width: 100%;
+    padding-left: 16px;
+    outline: none;
+    &::placeholder {
+      color: var(--text-subtle);
+      opacity: 1;
+    }
+    &.p-invalid {
+      border: 1px solid var(--border-danger);
+    }
+    &:enabled:focus, &:not(:disabled):hover {
+      border: 1px solid var(--border-focused);
+      outline: none;
+    }
+  }
+  &.has-label {
+    .p-inputtext {
+      padding-bottom: 5px;
+      padding-top: 20px;
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+  }
+  &.small {
+    height: 40px;
+    .p-inputtext {
+      height: 40px;
+      font-size: 14px;
+      border-radius: 8px;
+      padding-left: 12px;
+      &::placeholder {
+        font-size: 14px;
+      }
+    }
+    &.p-float-label > label {
+      font-size: 14px;
+      left: 12px;
+    }
+    &.has-prefix {
+      &> label {
+        left: 34px;
+      }
+      .p-inputtext {
+        padding-left: 34px;
+      }
+    }
+    &.p-float-label:has(.p-inputwrapper-filled) label,
+    &.p-float-label:has(input:focus) label,
+    &.p-float-label:has(input.p-filled) label{
+      top: 10px;
+      font-size: 10px;
+    }
+  }
+
+  &.small.has-label {
+    .p-inputtext {
+      padding-top: 15px;
+    }
+  }
+  &.disabled {
+    opacity: 0.6;
+  }
+}

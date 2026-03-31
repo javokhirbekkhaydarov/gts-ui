@@ -1,0 +1,54 @@
+@use '@/assets/utils';
+
+.easy-modal {
+  background: var(--elevation-surface-overlay);
+  box-shadow: 0px 8px 12px 0px #091E4226;
+  border: none;
+  backdrop-filter: blur(20px);
+  border-radius: 12px;
+  width: calc(100% - 40px);
+  min-width: 300px;
+  position: relative;
+  .p-dialog-header {
+    background: transparent;
+    padding: 20px 20px 0;
+  }
+  .p-dialog-footer {
+    background: transparent;
+    padding: 0 20px 20px;
+  }
+  .p-dialog-title {
+    color: var(--text-default);
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .header {
+    .title {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-default);
+    }
+  }
+  .close {
+    width: 28px;
+    height: 28px;
+    color: var(--icon-subtle);
+    border: 1px solid;
+    border-radius: 100%;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 11;
+  }
+  .p-dialog-content {
+    margin: 20px 10px 20px 20px;
+    padding: 0 10px 0 0;
+    background: transparent;
+    height: auto !important;
+    overflow-x: hidden;
+    @extend .scrollbar !optional;
+  }
+  &.no-scroll .p-dialog-content {
+    overflow: visible;
+  }
+}

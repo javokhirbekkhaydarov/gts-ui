@@ -1,0 +1,263 @@
+.easy-multi-select {
+  .p-multiselect {
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid var(--border-bold);
+    background: var(--background-input-default);
+    font-size: 15px;
+    color: var(--text-subtle);
+
+    &.p-disabled {
+      opacity: 0.5;
+    }
+    &-close {
+      display: none;
+    }
+
+    &.p-invalid {
+      border-color: var(--red-500);
+    }
+
+    &-label.p-placeholder {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      height: 100%;
+      color: var(--text-default);
+      padding-left: 12px;
+    }
+    &-label-container {
+      display: flex;
+      align-items: center;
+    }
+
+    &.p-focus {
+      outline: 1px solid var(--teal-500);
+    }
+
+    .p-multiselect-filter.p-inputtext {
+      height: 40px;
+      border-radius: 8px;
+      background: var(--background-input-default);
+      border-color: var(--border-bold);
+      color: var(--text-subtle);
+      font-size: 14px;
+      padding-left: 36px;
+      &:enabled:focus {
+        outline: 1px solid var(--border-focused);
+      }
+      &:placeholder {
+        opacity: 1 !important;
+        color: var(--text-subtle) !important;
+      }
+    }
+    .p-multiselect-filter-container .p-multiselect-filter-icon {
+      left: 12px;
+    }
+
+    &.large {
+      height: 48px;
+      font-size: 17px;
+
+      &-label {
+        font-size: 16px;
+      }
+    }
+    &.p-multiselect-chip .p-multiselect-token {
+      border-radius: 5px;
+      background-color: var(--background-neutral-default);
+      color: var(--text-default);
+      font-size: 14px;
+      line-height: 14px;
+      font-weight: 500;
+      padding: 7px 8px;
+      &:first-child {
+        margin-left: 6px;
+      }
+    }
+  }
+  &:not(.has-label) {
+    .p-placeholder {
+      opacity: 1 !important;
+      color: var(--text-subtle) !important;
+    }
+  }
+  &.large {
+    height: 48px;
+    font-size: 17px;
+
+    .p-multiselect-label {
+      font-size: 16px;
+    }
+
+    &.p-float-label > label {
+      font-size: 16px;
+      left: 12px;
+      color: var(--text-subtlest);
+    }
+
+    &.has-prefix {
+      & > label {
+        left: 34px;
+      }
+
+      .p-inputtext {
+        padding-left: 34px;
+      }
+    }
+
+    &.p-float-label:has(.p-inputwrapper-filled) label,
+    &.p-float-label:has(.p-inputwrapper-focus) label,
+    &.p-float-label:has(input.p-filled) label {
+      top: 14px;
+      font-size: 12px;
+    }
+  }
+  &.p-float-label:has(.p-inputwrapper-focus) label {
+    color: var(--border-selected);
+  }
+
+  &.small {
+    height: 40px;
+    font-size: 15px;
+
+    .p-multiselect-label {
+      font-size: 14px;
+    }
+
+    &.p-float-label > label {
+      font-size: 16px;
+      left: 12px;
+      color: var(--text-subtlest);
+    }
+
+    &.has-prefix {
+      & > label {
+        left: 34px;
+      }
+
+      .p-inputtext {
+        padding-left: 34px;
+      }
+    }
+
+    &.p-float-label:has(.p-inputwrapper-filled) label,
+    &.p-float-label:has(.p-inputwrapper-focus) label,
+    &.p-float-label:has(input.p-filled) label {
+      top: 13px;
+      font-size: 10px;
+    }
+  }
+
+  .p-multiselect-trigger-icon {
+    width: 13px;
+    height: 13px;
+  }
+
+  &.has-label .p-multiselect {
+    .p-multiselect-label:not(.p-dropdown-filter) {
+      padding-bottom: 5px;
+      padding-top: 20px;
+
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+
+    &.p-multiselect-chip .p-multiselect-token {
+      padding: 4px 5px;
+      border-radius: 3px;
+    }
+  }
+
+  .p-multiselect-panel {
+    border-radius: 12px;
+    background: var(--bg-white);
+    border: none;
+    top: 48px !important;
+
+    .p-checkbox .p-checkbox-box {
+      border-radius: 6px;
+      background: var(--background-input-default);
+      border-color: var(--border-bold)
+    }
+    .p-checkbox.p-highlight .p-checkbox-box {
+      background: var(--background-brand-bold-default);
+      border-color: var(--background-brand-bold-default);
+    }
+
+    .p-multiselect-header {
+      background: var(--elevation-surface-overlay);
+
+      .p-checkbox .p-checkbox-box {
+        border-radius: 6px;
+      }
+
+      .p-checkbox.p-variant-filled.p-highlight .p-checkbox-box {
+        background: var(--background-brand-bold-default);
+
+        svg {
+          color: var(--elevation-surface-overlay)
+        }
+      }
+    }
+
+    .p-multiselect-items-wrapper {
+      background: var(--elevation-surface-overlay);
+      border-bottom-right-radius: 6px;
+      border-bottom-left-radius: 6px;
+      .p-multiselect-empty-message {
+        color: var(--text-subtle);
+      }
+    }
+  }
+  .down-icon {
+    color: var(--icon-subtle) !important;
+    font-size: 20px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+  .rotate {
+    transform: rotate(180deg);
+  }
+
+  .p-multiselect-item {
+    height: 48px;
+    border-radius: 8px;
+    margin: 0;
+    color: var(--text-default);
+
+    &:hover {
+      background: var(--alpha-neutral200a);
+    }
+
+    &.p-focus {
+      background: var(--background-neutral-subtle-hovered);
+    }
+
+    &.p-highlight {
+      background: var(--alpha-neutral300a);
+    }
+
+    .p-checkbox.p-variant-filled.p-highlight .p-checkbox-box {
+      background: var(--background-brand-bold-default);
+      border: none;
+      svg {
+        color: var(--elevation-surface-overlay)
+      }
+    }
+  }
+
+  ::-webkit-scrollbar {
+    max-height: 30%;
+    height: 100%;
+    width: 4px;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--border-bold);
+    border-radius: 10px;
+    padding-right: 15px;
+  }
+}
