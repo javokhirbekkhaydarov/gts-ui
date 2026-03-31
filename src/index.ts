@@ -164,5 +164,6 @@ export { usePermission } from './composables/usePermission';
 export { useWindowSize } from './composables/useWindowSize';
 export { useClickOutside } from './composables/useClickOutside';
 export { useUser } from './composables/useUser';
+export { usePathBranding } from './composables/usePathBranding';
 
 
