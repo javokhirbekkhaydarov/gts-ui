@@ -36,7 +36,7 @@ const BRANDS: IBrandItem[] = [
     hosts: ['booking.skdavia.uz', 'booking.skdavia.ru'],
     config: {
       title: 'SKD Avia',
-      favicon: '@/assets/icons/logo/skd-avia-favicon.ico',
+      favicon: '/logo/skd-avia-favicon.ico',
       colors: {
         primary: '#00B5D7',
         hover: '#26A7D0',
@@ -51,7 +51,7 @@ const BRANDS: IBrandItem[] = [
     hosts: ['localhost', 'test.globaltravel.space'],
     config: {
       title: 'Creative Travel',
-      favicon: '@/assets/icons/logo/creative-travel-favicon.ico',
+      favicon: '/logo/creative-travel-favicon.ico',
       colors: {
         primary: '#FED90F',
         hover: '#FDC621',
