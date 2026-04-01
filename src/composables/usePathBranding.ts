@@ -36,7 +36,7 @@ const BRANDS: IBrandItem[] = [
     hosts: ['booking.skdavia.uz', 'booking.skdavia.ru'],
     config: {
       title: 'SKD Avia',
-      favicon: '/logo/skd-avia-favicon.ico',
+      favicon: '@/assets/icons/logo/skd-avia-favicon.ico',
       colors: {
         primary: '#00B5D7',
         hover: '#26A7D0',
@@ -48,10 +48,10 @@ const BRANDS: IBrandItem[] = [
     },
   },
   {
-    hosts: ['localhost' , 'test.globaltravel.space'],
+    hosts: ['localhost', 'test.globaltravel.space'],
     config: {
       title: 'Creative Travel',
-      favicon: '/logo/creative-travel-favicon.ico',
+      favicon: '@/assets/icons/logo/creative-travel-favicon.ico',
       colors: {
         primary: '#FED90F',
         hover: '#FDC621',
@@ -106,4 +106,3 @@ export const usePathBranding = () => {
 
   return { applyPathBranding }
 }
-
