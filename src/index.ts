@@ -41,6 +41,7 @@ import EasyAirport from './components/airports/EasyAirportAutocomplete.vue';
 import EasyPaymentModal from './components/payment/PaymentModal.vue';
 import EasyInputNumber from "@/components/input-number/EasyInputNumber.vue";
 import EasyLoginModal from './components/login/EasyLoginModal.vue';
+import { usePathBranding } from './composables/usePathBranding';
 
 const components = [
   EasyInput,
@@ -86,6 +87,9 @@ const components = [
 
 export default {
   install(app: App) {
+    const { applyPathBranding } = usePathBranding();
+    applyPathBranding();
+
     components.forEach(component => {
       const componentName = component.name || component.__name;
       if (componentName) {
