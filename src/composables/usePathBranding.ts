@@ -1,3 +1,6 @@
+import skdFavicon from '../assets/icons/logo/skd-avia-favicon.ico'
+import creativeFavicon from '../assets/icons/logo/creative-travel-favicon.ico'
+
 interface IBrandColors {
   primary: string
   hover: string
@@ -20,7 +23,7 @@ interface IBrandItem {
 
 const DEFAULT_BRAND: IBrandConfig = {
   title: 'globaltravelspace',
-  favicon: '/favicon.png',
+  favicon: skdFavicon,
   colors: {
     primary: '#00B5D7',
     hover: '#26A7D0',
@@ -36,7 +39,7 @@ const BRANDS: IBrandItem[] = [
     hosts: ['booking.skdavia.uz', 'booking.skdavia.ru'],
     config: {
       title: 'SKD Avia',
-      favicon: '/logo/skd-avia-favicon.ico',
+      favicon: skdFavicon,
       colors: {
         primary: '#00B5D7',
         hover: '#26A7D0',
@@ -51,7 +54,7 @@ const BRANDS: IBrandItem[] = [
     hosts: ['localhost', 'test.globaltravel.space'],
     config: {
       title: 'Creative Travel',
-      favicon: '/logo/creative-travel-favicon.ico',
+      favicon: creativeFavicon,
       colors: {
         primary: '#FED90F',
         hover: '#FDC621',
