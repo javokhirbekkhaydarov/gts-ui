@@ -8,6 +8,8 @@ interface IBrandColors {
 }
 
 interface IBrandConfig {
+  title: string
+  favicon: string
   colors: IBrandColors
 }
 
@@ -17,6 +19,8 @@ interface IBrandItem {
 }
 
 const DEFAULT_BRAND: IBrandConfig = {
+  title: 'globaltravelspace',
+  favicon: '/favicon.png',
   colors: {
     primary: '#00B5D7',
     hover: '#26A7D0',
@@ -31,6 +35,8 @@ const BRANDS: IBrandItem[] = [
   {
     hosts: ['booking.skdavia.uz', 'booking.skdavia.ru'],
     config: {
+      title: 'SKD Avia',
+      favicon: '/logo/skd-avia-favicon.ico',
       colors: {
         primary: '#00B5D7',
         hover: '#26A7D0',
@@ -42,8 +48,10 @@ const BRANDS: IBrandItem[] = [
     },
   },
   {
-    hosts: ['b2b.creativetravel.uz', 'localhost', 'test.globaltravel.space'],
+    hosts: ['localhost' , 'test.globaltravel.space'],
     config: {
+      title: 'Creative Travel',
+      favicon: '/logo/creative-travel-favicon.ico',
       colors: {
         primary: '#FED90F',
         hover: '#FDC621',
@@ -69,9 +77,19 @@ export const usePathBranding = () => {
   }
 
   const applyPathBranding = (): IBrandConfig => {
-    const { colors } = getBrandingByDomain()
+    const { title, favicon, colors } = getBrandingByDomain()
 
     if (typeof document !== 'undefined') {
+      document.title = title
+      let faviconLink = document.querySelector('link[rel="icon"]')
+      if (!faviconLink) {
+        faviconLink = document.createElement('link')
+        faviconLink.setAttribute('rel', 'icon')
+        document.head.appendChild(faviconLink)
+      }
+      faviconLink.setAttribute('type', 'image/x-icon')
+      faviconLink.setAttribute('href', favicon)
+
       const root = document.documentElement
       root.style.setProperty('--brand-primary', colors.primary)
       root.style.setProperty('--brand-primary-hover', colors.hover)
@@ -83,7 +101,7 @@ export const usePathBranding = () => {
       root.style.setProperty('--background-accent-blue-subtle', colors.subtle)
     }
 
-    return { colors }
+    return { title, favicon, colors }
   }
 
   return { applyPathBranding }
