@@ -48,7 +48,7 @@ const BRANDS: IBrandItem[] = [
     },
   },
   {
-    hosts: ['localhost', 'test.globaltravel.space'],
+    hosts: ['localhost'],
     config: {
       title: 'Creative Travel',
       favicon: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SojqtAmEGI5qWXFmNnz70tsE6DYarp29gGOidK',
