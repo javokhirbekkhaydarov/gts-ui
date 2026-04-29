@@ -377,8 +377,8 @@
   --background-neutral-subtle-default: var(--alpha-dark-neutral250a);
   --background-neutral-subtle-hovered: var(--alpha-dark-neutral350a);
   --background-neutral-subtle-pressed: var(--alpha-dark-neutral400a);
-  --background-selected-default: var(--brand-primary-subtler, var(--teal-100));
-  --background-selected-hovered: var(--brand-primary-subtle, var(--teal-200));
+  --background-selected-default: var(--brand-primary-subtlerDarkMode, var(--teal-100));
+  --background-selected-hovered: var(--brand-primary-subtleDarkMode, var(--teal-200));
   --background-selected-pressed: var(--brand-primary-selected-subtle, var(--teal-300));
   --background-success-bold-default: var(--green-700);
   --background-success-bold-hovered: var(--green-800);

@@ -4,6 +4,8 @@ interface IBrandColors {
   pressed: string
   subtler: string
   subtle: string
+  subtleDarkMode: string
+  subtlerDarkMode: string
   selectedSubtle: string
 }
 
@@ -27,6 +29,8 @@ const DEFAULT_BRAND: IBrandConfig = {
     pressed: '#0392B7',
     subtler: '#EEF4FC',
     subtle: '#E2F3FF',
+    subtleDarkMode: '#364156',
+    subtlerDarkMode: '#364156',
     selectedSubtle: '#D0E4FF',
   },
 }
@@ -43,6 +47,8 @@ const BRANDS: IBrandItem[] = [
         pressed: '#0392B7',
         subtler: '#EEF4FC',
         subtle: '#E2F3FF',
+        subtleDarkMode: '#364156',
+        subtlerDarkMode: '#364156',
         selectedSubtle: '#D0E4FF',
       },
     },
@@ -58,6 +64,8 @@ const BRANDS: IBrandItem[] = [
         pressed: '#FDC621',
         subtler: '#f7f2dc',
         subtle: '#FFF1B8',
+        subtleDarkMode: '#364156',
+        subtlerDarkMode: '#364156',
         selectedSubtle: '#FFEA99',
       },
     },
@@ -99,6 +107,8 @@ export const usePathBranding = () => {
       root.style.setProperty('--brand-primary-selected-subtle', colors.selectedSubtle)
       root.style.setProperty('--background-accent-blue-subtler', colors.subtler)
       root.style.setProperty('--background-accent-blue-subtle', colors.subtle)
+      root.style.setProperty('--brand-primary-subtleDarkMode', colors.subtleDarkMode)
+      root.style.setProperty('--brand-primary-subtlerDarkMode', colors.subtlerDarkMode)
     }
 
     return { title, favicon, colors }

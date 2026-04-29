@@ -179,7 +179,7 @@
     .p-checkbox .p-checkbox-box {
       border-radius: 6px;
       background: var(--background-input-default);
-      border-color: var(--border-bold)
+      border-color: var(--border-bold);
     }
     .p-checkbox.p-highlight .p-checkbox-box {
       background: var(--background-brand-bold-default);
@@ -197,7 +197,7 @@
         background: var(--background-brand-bold-default);
 
         svg {
-          color: var(--elevation-surface-overlay)
+          color: var(--elevation-surface-overlay);
         }
       }
     }
@@ -239,11 +239,15 @@
       background: var(--alpha-neutral300a);
     }
 
+    :dark-mode &.p-highlight {
+      background: var(--brand-primary-subtleDarkMode);
+    }
+
     .p-checkbox.p-variant-filled.p-highlight .p-checkbox-box {
       background: var(--background-brand-bold-default);
       border: none;
       svg {
-        color: var(--elevation-surface-overlay)
+        color: var(--elevation-surface-overlay);
       }
     }
   }

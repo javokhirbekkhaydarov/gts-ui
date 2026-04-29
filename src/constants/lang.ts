@@ -62,7 +62,7 @@ export const lang: Record<LocaleTypes, any> = {
       search: 'Поиск',
       extranet: 'Экстранет',
       orders: 'Заказы',
-      contracts: 'Договора',
+      contracts: 'Договоры',
       community: 'Сообщество',
       reports: 'Отчёты',
       settings: 'Настройки',
