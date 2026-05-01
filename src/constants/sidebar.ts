@@ -73,14 +73,14 @@ export const sidebarItems = [
     code: 'agreement-list',
     pages: ['agreements', 'agreementsList']
   },
-  {
-    path: '/community',
-    icon: 'icon-Outline-Chat',
-    activeIcon: 'icon-Bold-Chat',
-    label: 'community',
-    code: 'group-community',
-    pages: ['community']
-  },
+  // {
+  //   path: '/community',
+  //   icon: 'icon-Outline-Chat',
+  //   activeIcon: 'icon-Bold-Chat',
+  //   label: 'community',
+  //   code: 'group-community',
+  //   pages: ['community']
+  // },
   {
     icon: 'icon-Outline-Activity',
     activeIcon: 'icon-Bold-Activity',
