@@ -76,8 +76,8 @@ const logOut = () => {
 
 getLogo().then((res) => {
   if (res && injectedBaseUrl) {
-    fullLogoCustom.value = injectedBaseUrl.value + res.logo
-    shortLogoCustom.value = injectedBaseUrl.value + res.mini_logo
+    if (res.logo) fullLogoCustom.value = injectedBaseUrl.value + res.logo
+    if (res.mini_logo) shortLogoCustom.value = injectedBaseUrl.value + res.mini_logo
   }
 }).catch((error) => {
   console.error('Failed to load custom logo:', error)
