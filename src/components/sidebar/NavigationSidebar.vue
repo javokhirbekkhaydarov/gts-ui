@@ -42,22 +42,23 @@ const logoLoading = ref(true)
 const injectedBaseUrl = inject<ComputedRef<string>>('baseUrl')
 
 const translatedRoutes = computed(() => {
-  const addTranslate = (arr: ISidebarItem[]) => {
+  const addTranslate = (arr: ISidebarItem[]): ISidebarItem[] => {
     return arr.map((item) => {
-      item.label = lang[locale.value]?.sidebar[item.label]
+      const translated = { ...item }
+      translated.label = lang[locale.value]?.sidebar[item.label] ?? item.label
 
-      if ('children' in item && item.children?.length) {
-        addTranslate(item.children)
+      if ('children' in translated && translated.children?.length) {
+        translated.children = addTranslate(translated.children)
       }
 
-      return item
+      return translated
     })
   }
 
   return addTranslate(permissions.availableRoutes.value)
 })
 
-const routes = ref(translatedRoutes.value || [])
+const routes = ref<ISidebarItem[]>(translatedRoutes.value || [])
 const childrenRoutes = ref<ISidebarItem[]>([])
 
 const appLogo = computed(() => {
