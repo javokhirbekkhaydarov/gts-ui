@@ -33,6 +33,7 @@ const languages: IItem[] = [
   { label: "O'zbekcha", value: 'uz', icon: 'icon-uzbekistan' },
   { label: 'English', value: 'en', icon: 'icon-united-kingdom' },
   { label: 'Русский', value: 'ru', icon: 'icon-russia' },
+  { label: 'Azərbaycanca', value: 'az', icon: 'icon-azerbaijan' },
 ]
 
 const value = ref('language')

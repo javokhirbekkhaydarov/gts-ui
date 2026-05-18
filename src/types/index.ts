@@ -1,4 +1,4 @@
-export type LocaleTypes = 'en' | 'ru' | 'uz'
+export type LocaleTypes = 'en' | 'ru' | 'uz' | 'az'
 
 export type ServicesTypes = 'flights' | 'hotels' | 'railway' | 'transfers' | 'tours' | 'insurance' | 'excursions' | 'esim' | 'cruises' | 'rentcar'
 
