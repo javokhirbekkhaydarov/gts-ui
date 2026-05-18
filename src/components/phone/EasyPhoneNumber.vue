@@ -10,7 +10,7 @@ import { catcher } from '@/utils/catcher'
 
 const props = withDefaults(
   defineProps<{
-    locale: 'ru' | 'uz' | 'en'
+    locale: 'ru' | 'uz' | 'en' | 'az'
     size?: 'small' | 'large'
     placeholder?: string
     invalid?: boolean

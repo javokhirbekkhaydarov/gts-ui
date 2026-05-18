@@ -9,6 +9,7 @@ import './EasyLanguageCurrencyDropdown.scss'
 import { ICurrency } from '@/types/autocomplete'
 import { LocaleTypes } from '@/types'
 import { lang } from '@/constants/lang'
+import azFlag from '@/assets/icons/flags/az.png'
 
 withDefaults(defineProps<{
   currencies?: ICurrency[]
@@ -33,7 +34,7 @@ const languages: IItem[] = [
   { label: "O'zbekcha", value: 'uz', icon: 'icon-uzbekistan' },
   { label: 'English', value: 'en', icon: 'icon-united-kingdom' },
   { label: 'Русский', value: 'ru', icon: 'icon-russia' },
-  { label: 'Azərbaycanca', value: 'az', icon: 'icon-azerbaijan' },
+  { label: 'Azərbaycanca', value: 'az', icon: azFlag },
 ]
 
 const value = ref('language')
@@ -65,7 +66,8 @@ const isOpen = ref(false)
             :class="{ active: language.value === locale }"
             @click="emit('selectLanguage', String(language.value))"
           >
-            <EasyIcon :name="String(language.icon)" :size="24" />
+            <img v-if="String(language.icon).startsWith('data:') || String(language.icon).includes('/')" :src="String(language.icon)" :width="24" :height="24" style="border-radius: 50%; object-fit: cover;" />
+            <EasyIcon v-else :name="String(language.icon)" :size="24" />
             <p>{{ language.label }}</p>
           </div>
         </template>
