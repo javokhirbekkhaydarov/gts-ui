@@ -7,6 +7,9 @@ interface IBrandColors {
   subtleDarkMode: string
   subtlerDarkMode: string
   selectedSubtle: string
+  subtleDarkButton: string
+  subtleDarkButtonHover: string
+  subtleDarkButtonActive: string
 }
 
 interface IBrandConfig {
@@ -29,10 +32,13 @@ const DEFAULT_BRAND: IBrandConfig = {
     pressed: '#0392B7',
     subtler: '#EEF4FC',
     subtle: '#E2F3FF',
+    selectedSubtle: '#D0E4FF',
     subtleDarkMode: '#364156',
     subtlerDarkMode: '#364156',
-    selectedSubtle: '#D0E4FF',
-  },
+    subtleDarkButton: '#1A3A4A',
+    subtleDarkButtonHover: '#234D5E',
+    subtleDarkButtonActive: '#2C5F72'
+  }
 }
 
 const BRANDS: IBrandItem[] = [
@@ -49,12 +55,35 @@ const BRANDS: IBrandItem[] = [
         subtle: '#E2F3FF',
         subtleDarkMode: '#364156',
         subtlerDarkMode: '#364156',
-        selectedSubtle: '#D0E4FF',
-      },
+        subtleDarkButton: '#1A3A4A',
+        subtleDarkButtonHover: '#234D5E',
+        subtleDarkButtonActive: '#2C5F72',
+        selectedSubtle: '#D0E4FF'
+      }
     },
   },
   {
-    hosts: ['localhost'],
+    hosts: ['b2b.europe.az', 'localhost', 'test.globaltravel.space'],
+    config: {
+      title: 'Europe Booking Assistance',
+      favicon: '/logo/europe-tf-favicon.ico',
+      colors: {
+        primary: '#143AFF',
+        hover: '#1230E8',
+        pressed: '#0F26CC',
+        subtler: '#EEF1FF',
+        subtle: '#DCE5FF',
+        subtleDarkMode: '#1A2B5C',
+        subtlerDarkMode: '#1A2B5C',
+        subtleDarkButton: '#0D1E4A',
+        subtleDarkButtonHover: '#152560',
+        subtleDarkButtonActive: '#1C2E72',
+        selectedSubtle: '#C5D0FF'
+      }
+    }
+  },
+  {
+    hosts: ['westdev'],
     config: {
       title: 'Creative Travel',
       favicon: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SojqtAmEGI5qWXFmNnz70tsE6DYarp29gGOidK',
@@ -65,9 +94,12 @@ const BRANDS: IBrandItem[] = [
         subtler: '#f7f2dc',
         subtle: '#FFF1B8',
         subtleDarkMode: '#364156',
+        subtleDarkButton: '#4A4220',
+        subtleDarkButtonHover: '#5C512A',
+        subtleDarkButtonActive: '#6B5F32',
         subtlerDarkMode: '#364156',
-        selectedSubtle: '#FFEA99',
-      },
+        selectedSubtle: '#FFEA99'
+      }
     },
   },
 ]
@@ -109,6 +141,9 @@ export const usePathBranding = () => {
       root.style.setProperty('--background-accent-blue-subtle', colors.subtle)
       root.style.setProperty('--brand-primary-subtleDarkMode', colors.subtleDarkMode)
       root.style.setProperty('--brand-primary-subtlerDarkMode', colors.subtlerDarkMode)
+      root.style.setProperty('--background-accent-blue-subtleDarkButton', colors.subtleDarkButton)
+      root.style.setProperty('--background-accent-blue-subtleDarkButtonHover', colors.subtleDarkButtonHover)
+      root.style.setProperty('--background-accent-blue-subtleDarkButtonActive', colors.subtleDarkButtonActive)
     }
 
     return { title, favicon, colors }
