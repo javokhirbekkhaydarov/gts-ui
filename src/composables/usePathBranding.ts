@@ -66,7 +66,7 @@ const BRANDS: IBrandItem[] = [
     hosts: ['b2b.europe.az', 'localhost', 'test.globaltravel.space'],
     config: {
       title: 'Europe Booking Assistance',
-      favicon: '/logo/europe-tf-favicon.ico',
+      favicon: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoFY1zaQlfCWlEYB2JRFmStkXaw8hZc3Nz5enq',
       colors: {
         primary: '#143AFF',
         hover: '#1230E8',
