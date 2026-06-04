@@ -10,7 +10,11 @@ interface IBrandColors {
   subtleDarkButton: string
   subtleDarkButtonHover: string
   subtleDarkButtonActive: string
+  primaryDark?: string
+  hoverDark?: string
+  pressedDark?: string
 }
+
 
 interface IBrandConfig {
   title: string
@@ -60,7 +64,7 @@ const BRANDS: IBrandItem[] = [
         subtleDarkButtonActive: '#2C5F72',
         selectedSubtle: '#D0E4FF'
       }
-    },
+    }
   },
   {
     hosts: ['b2b.europe.az', 'localhost', 'test.globaltravel.space'],
@@ -73,12 +77,15 @@ const BRANDS: IBrandItem[] = [
         pressed: '#0F26CC',
         subtler: '#EEF1FF',
         subtle: '#DCE5FF',
-        subtleDarkMode: '#1A2B5C',
-        subtlerDarkMode: '#1A2B5C',
-        subtleDarkButton: '#0D1E4A',
-        subtleDarkButtonHover: '#152560',
-        subtleDarkButtonActive: '#1C2E72',
-        selectedSubtle: '#C5D0FF'
+        subtleDarkMode: '#364156',
+        subtleDarkButton: '#4A4220',
+        subtleDarkButtonHover: '#5C512A',
+        subtleDarkButtonActive: '#6B5F32',
+        subtlerDarkMode: '#364156',
+        selectedSubtle: '#FFEA99',
+        primaryDark: '#FFC700',
+        hoverDark: '#E6B300',
+        pressedDark: '#CC9F00'
       }
     }
   },
@@ -100,8 +107,8 @@ const BRANDS: IBrandItem[] = [
         subtlerDarkMode: '#364156',
         selectedSubtle: '#FFEA99'
       }
-    },
-  },
+    }
+  }
 ]
 
 export const usePathBranding = () => {
@@ -144,6 +151,23 @@ export const usePathBranding = () => {
       root.style.setProperty('--background-accent-blue-subtleDarkButton', colors.subtleDarkButton)
       root.style.setProperty('--background-accent-blue-subtleDarkButtonHover', colors.subtleDarkButtonHover)
       root.style.setProperty('--background-accent-blue-subtleDarkButtonActive', colors.subtleDarkButtonActive)
+
+      if (colors.primaryDark) {
+        let brandDarkStyle = document.getElementById('brand-dark-overrides')
+        if (!brandDarkStyle) {
+          brandDarkStyle = document.createElement('style')
+          brandDarkStyle.id = 'brand-dark-overrides'
+          document.head.appendChild(brandDarkStyle)
+        }
+        brandDarkStyle.textContent = `
+          .dark-mode {
+            --brand-primary: ${colors.primaryDark} !important;
+            --brand-primary-hover: ${colors.hoverDark} !important;
+            --brand-primary-pressed: ${colors.pressedDark} !important;
+            --brand-primary-subtle: ${colors.subtleDarkMode}!important;
+          }
+        `
+      }
     }
 
     return { title, favicon, colors }
