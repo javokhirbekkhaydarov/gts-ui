@@ -67,7 +67,7 @@ const BRANDS: IBrandItem[] = [
     }
   },
   {
-    hosts: ['b2b.europe.az', 'localhost', 'test.globaltravel.space'],
+    hosts: ['b2b.europe.az', 'localhost'],
     config: {
       title: 'Europe Booking Assistance',
       favicon: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoFY1zaQlfCWlEYB2JRFmStkXaw8hZc3Nz5enq',
