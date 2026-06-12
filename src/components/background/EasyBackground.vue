@@ -70,6 +70,7 @@ interface Element {
     <img
       v-if="backgroundImage"
       :src="backgroundImage"
+      style="object-fit: cover;"
       class="absolute inset-0 w-full h-full object-cover"
     />
     <TransitionGroup v-if="!hideBalls" name="fade">
