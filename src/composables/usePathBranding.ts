@@ -118,8 +118,8 @@ const BRANDS: IBrandItem[] = [
     hosts: ['travel.vatafly.com', 'localhost'],
     config: {
       title: 'Vata Fly',
-      favicon: '/logo/vataflylogo.ico',
-      backgroundImage: '/brands/vata-fly/banner.png',
+      favicon: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoGmcHZNM6OtwS0DdhBLNq8x3pY1Pu7mcWsCr9',
+      backgroundImage: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoATW7v4ntqW65x90cCjFiM3NfTukyzwYshEaV',
       loginLayout: 'vata-fly',
       defaultLanguage: 'AZ',
       hideFooter: true,
