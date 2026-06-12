@@ -4,7 +4,7 @@
   height: 100dvh;
   display: grid;
   grid-template-rows: 72px auto 72px;
-  background-color: var(--background-neutral-subtle-default);
+  background-color: var(--background-neutral-subtle);
 }
 .navigation-sidebar.short .navigation-sidebar__link {
   justify-content: center;
