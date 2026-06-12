@@ -1,13 +1,14 @@
 <script lang="ts" setup>
 import { ref, onMounted, watch } from 'vue'
 import './EasyBackground.css'
-import { useBrandConfig } from './useBrandConfig'
+import { usePathBranding } from '@/composables/usePathBranding'
 
 const props = defineProps<{
   routePath?: string
 }>()
 
-const { backgroundImage, hideBalls } = useBrandConfig()
+const { getBrandConfig } = usePathBranding()
+const { backgroundImage, hideBalls } = getBrandConfig()
 
 const colors = ['violet', 'violet', 'grey', 'green', 'blue', 'orange', 'grey']
 const minHeight = 125
