@@ -20,6 +20,11 @@ interface IBrandConfig {
   title: string
   favicon: string
   colors: IBrandColors
+  backgroundImage?: string
+  loginLayout?: string
+  defaultLanguage?: string
+  hideFooter?: boolean
+  hideBalls?: boolean
 }
 
 interface IBrandItem {
@@ -108,7 +113,32 @@ const BRANDS: IBrandItem[] = [
         selectedSubtle: '#FFEA99'
       }
     }
-  }
+  },
+  {
+    hosts: ['travel.vatafly.com', 'localhost'],
+    config: {
+      title: 'Vata Fly',
+      favicon: '/logo/vataflylogo.ico',
+      backgroundImage: '/brands/vata-fly/banner.png',
+      loginLayout: 'vata-fly',
+      defaultLanguage: 'AZ',
+      hideFooter: true,
+      hideBalls: true,
+      colors: {
+        primary: '#4A85DD',
+        hover: '#447ACB',
+        pressed: '#3D6DB5',
+        subtler: '#F1F5FC',
+        subtle: '#E2EBFA',
+        selectedSubtle: '#CCDDF5',
+        subtleDarkMode: '#21314D',
+        subtlerDarkMode: '#21314D',
+        subtleDarkButton: '#1E2A41',
+        subtleDarkButtonHover: '#233452',
+        subtleDarkButtonActive: '#263C5F'
+      }
+    }
+  },
 ]
 
 export const usePathBranding = () => {
@@ -173,5 +203,9 @@ export const usePathBranding = () => {
     return { title, favicon, colors }
   }
 
-  return { applyPathBranding }
+  const getBrandConfig = (): IBrandConfig => {
+    return getBrandingByDomain()
+  }
+
+  return { applyPathBranding, getBrandConfig }
 }

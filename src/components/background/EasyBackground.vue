@@ -1,10 +1,13 @@
 <script lang="ts" setup>
 import { ref, onMounted, watch } from 'vue'
 import './EasyBackground.css'
+import { useBrandConfig } from './useBrandConfig'
 
 const props = defineProps<{
   routePath?: string
 }>()
+
+const { backgroundImage, hideBalls } = useBrandConfig()
 
 const colors = ['violet', 'violet', 'grey', 'green', 'blue', 'orange', 'grey']
 const minHeight = 125
@@ -63,7 +66,12 @@ interface Element {
       borderRadius: '0',
     }"
   >
-    <TransitionGroup name="fade">
+    <img
+      v-if="backgroundImage"
+      :src="backgroundImage"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <TransitionGroup v-if="!hideBalls" name="fade">
       <div
         v-for="el of elements"
         :class="['sphere', el.className]"
