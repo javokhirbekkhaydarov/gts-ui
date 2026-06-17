@@ -160,8 +160,8 @@ const BRANDS: IBrandItem[] = [
     hosts: ['localhost'],
     config: {
       title: 'Carlton Travel Assistance',
-      favicon: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoiXf8ehsOasZdLcGnRvyTYBxHEwm2bkeFI7UJ',
-      logo: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoiXf8ehsOasZdLcGnRvyTYBxHEwm2bkeFI7UJ',
+      favicon: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoTSHjyUIw9cE7hRYbvXpdSDVfaPNgzxwLKkl4',
+      logo: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoTSHjyUIw9cE7hRYbvXpdSDVfaPNgzxwLKkl4',
       backgroundImage: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoixgpiUsOasZdLcGnRvyTYBxHEwm2bkeFI7UJ',
       mode: 'dark',
       loginLayout: 'carlton',
