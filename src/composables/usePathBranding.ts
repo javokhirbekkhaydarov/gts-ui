@@ -162,7 +162,7 @@ const BRANDS: IBrandItem[] = [
       title: 'Carlton Travel Assistance',
       favicon: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoiXf8ehsOasZdLcGnRvyTYBxHEwm2bkeFI7UJ',
       logo: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoiXf8ehsOasZdLcGnRvyTYBxHEwm2bkeFI7UJ',
-      backgroundImage: '/brands/carlton/banner.png',
+      backgroundImage: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoixgpiUsOasZdLcGnRvyTYBxHEwm2bkeFI7UJ',
       mode: 'dark',
       loginLayout: 'carlton',
       defaultLanguage: 'AZ',
