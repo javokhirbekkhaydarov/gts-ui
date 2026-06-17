@@ -13,18 +13,30 @@ interface IBrandColors {
   primaryDark?: string
   hoverDark?: string
   pressedDark?: string
+  sidebarBg?: string
+  sidebarBgHover?: string
+  sidebarText?: string
 }
 
+interface IBrandFooter {
+  hidden?: boolean
+  copyright?: string
+  showBrandLogos?: boolean
+  showPaymentLogos?: boolean
+  poweredBy?: string | null
+}
 
 interface IBrandConfig {
   title: string
   favicon: string
   colors: IBrandColors
+  logo?: string
+  mode?: 'dark' | 'light'
   backgroundImage?: string
   loginLayout?: string
   defaultLanguage?: string
-  hideFooter?: boolean
   hideBalls?: boolean
+  footer?: IBrandFooter
 }
 
 interface IBrandItem {
@@ -76,6 +88,7 @@ const BRANDS: IBrandItem[] = [
     config: {
       title: 'Europe Booking Assistance',
       favicon: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoFY1zaQlfCWlEYB2JRFmStkXaw8hZc3Nz5enq',
+      logo: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoFY1zaQlfCWlEYB2JRFmStkXaw8hZc3Nz5enq',
       colors: {
         primary: '#143AFF',
         hover: '#1230E8',
@@ -115,15 +128,18 @@ const BRANDS: IBrandItem[] = [
     }
   },
   {
-    hosts: ['travel.vatafly.com', 'localhost'],
+    hosts: ['travel.vatafly.com'],
     config: {
       title: 'Vata Fly',
       favicon: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoGmcHZNM6OtwS0DdhBLNq8x3pY1Pu7mcWsCr9',
+      logo: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoGmcHZNM6OtwS0DdhBLNq8x3pY1Pu7mcWsCr9',
       backgroundImage: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoATW7v4ntqW65x90cCjFiM3NfTukyzwYshEaV',
       loginLayout: 'vata-fly',
       defaultLanguage: 'AZ',
-      hideFooter: true,
       hideBalls: true,
+      footer: {
+        hidden: true
+      },
       colors: {
         primary: '#4A85DD',
         hover: '#447ACB',
@@ -139,7 +155,48 @@ const BRANDS: IBrandItem[] = [
       }
     }
   },
+  {
+    // hosts: ['b2b.carlton.az'],
+    hosts: ['localhost'],
+    config: {
+      title: 'Carlton Travel Assistance',
+      favicon: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoiXf8ehsOasZdLcGnRvyTYBxHEwm2bkeFI7UJ',
+      logo: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoiXf8ehsOasZdLcGnRvyTYBxHEwm2bkeFI7UJ',
+      backgroundImage: '/brands/carlton/banner.png',
+      mode: 'dark',
+      loginLayout: 'carlton',
+      defaultLanguage: 'AZ',
+      hideBalls: true,
+      footer: {
+        hidden: false
+      },
+      colors: {
+        primary: '#CDA63A',
+        hover: '#B8922F',
+        pressed: '#A37E28',
+        subtler: '#FDF6E3',
+        subtle: '#FAF0D0',
+        selectedSubtle: '#F5E4A8',
+        subtleDarkMode: '#2C1E08',
+        subtlerDarkMode: '#2C1E08',
+        subtleDarkButton: '#3D2A0A',
+        subtleDarkButtonHover: '#4A3310',
+        subtleDarkButtonActive: '#563C14',
+        sidebarBg: '#1C1208',
+        sidebarBgHover: '#2D1E0C',
+        sidebarText: '#FFFFFF'
+      }
+    }
+  },
 ]
+
+const DEFAULT_FOOTER: Required<IBrandFooter> = {
+  hidden: false,
+  copyright: '© Globaltravel.space | All rights reserved',
+  showBrandLogos: true,
+  showPaymentLogos: true,
+  poweredBy: null
+}
 
 export const usePathBranding = () => {
   const getHostname = () => {
@@ -198,6 +255,32 @@ export const usePathBranding = () => {
           }
         `
       }
+
+      if (colors.sidebarBg) {
+        let sidebarStyle = document.getElementById('brand-sidebar-overrides')
+        if (!sidebarStyle) {
+          sidebarStyle = document.createElement('style')
+          sidebarStyle.id = 'brand-sidebar-overrides'
+          document.head.appendChild(sidebarStyle)
+        }
+        sidebarStyle.textContent = `
+          .navigation-sidebar {
+            background-color: ${colors.sidebarBg} !important;
+          }
+          .navigation-sidebar .navigation-sidebar__link:not(.disable):hover {
+            background-color: ${colors.sidebarBgHover} !important;
+          }
+          .navigation-sidebar .navigation-sidebar__link {
+            color: ${colors.sidebarText} !important;
+          }
+          .navigation-sidebar .navigation-sidebar__link.active {
+            color: ${colors.primary} !important;
+          }
+          .navigation-sidebar .navigation-sidebar__link.active .navigation-sidebar__more:before {
+            color: ${colors.primary} !important;
+          }
+        `
+      }
     }
 
     return { title, favicon, colors }
@@ -207,5 +290,50 @@ export const usePathBranding = () => {
     return getBrandingByDomain()
   }
 
-  return { applyPathBranding, getBrandConfig }
+  const getLoginLayout = (): string => {
+    const config = getBrandingByDomain()
+    return config.loginLayout || 'default'
+  }
+
+  const getDefaultLanguage = (): string | null => {
+    const config = getBrandingByDomain()
+    return config.defaultLanguage?.toLowerCase() || null
+  }
+
+  const getFooterConfig = (): Required<IBrandFooter> => {
+    const config = getBrandingByDomain()
+    return { ...DEFAULT_FOOTER, ...config.footer }
+  }
+
+  const isFooterHidden = (): boolean => getFooterConfig().hidden
+
+  const getBackgroundConfig = (): { backgroundImage: string | null; hideBalls: boolean } => {
+    const config = getBrandingByDomain()
+    return {
+      backgroundImage: config.backgroundImage || null,
+      hideBalls: config.hideBalls === true
+    }
+  }
+
+  const getBrandLogo = (): string | null => {
+    const config = getBrandingByDomain()
+    return config.logo || null
+  }
+
+  const getDefaultDarkMode = (): boolean => {
+    const config = getBrandingByDomain()
+    return config.mode === 'dark'
+  }
+
+  return {
+    applyPathBranding,
+    getBrandConfig,
+    getBrandLogo,
+    getDefaultDarkMode,
+    getLoginLayout,
+    getDefaultLanguage,
+    isFooterHidden,
+    getFooterConfig,
+    getBackgroundConfig
+  }
 }

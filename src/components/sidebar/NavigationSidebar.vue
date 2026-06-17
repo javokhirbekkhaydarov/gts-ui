@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { computed, ComputedRef, inject, Ref, ref, watchEffect } from 'vue'
+import { computed, ComputedRef, inject, onMounted, Ref, ref, watchEffect } from 'vue'
 import NavigationSidebarItem from './NavigationSidebarItem.vue'
 import ScrollPanel from 'primevue/scrollpanel'
 import { ISidebarItem } from '@/types/ui'
@@ -8,6 +8,7 @@ import { lang } from '@/constants/lang'
 import { LocaleTypes } from '@/types'
 import { usePermission } from '@/composables/usePermission'
 import { useUser } from '@/composables/useUser'
+import { usePathBranding } from '@/composables/usePathBranding'
 import Skeleton from 'primevue/skeleton'
 
 const dipLogo = 'https://api.globaltravel.space/media/imgs/logo/dip-logo.png'
@@ -28,9 +29,11 @@ const props = withDefaults(
 
 const short = defineModel<boolean>('short', { default: false })
 
-const {getLogo} = useUser()
+const { getLogo } = useUser()
 const permissions = usePermission()
 const locale = inject<Ref<LocaleTypes>>('locale', ref('ru'))
+const { getBrandLogo, getDefaultDarkMode } = usePathBranding()
+const brandLogo = getBrandLogo()
 
 const isDipavia = window.location.href.includes('dipavia.uz')
 
@@ -63,17 +66,23 @@ const childrenRoutes = ref<ISidebarItem[]>([])
 
 const appLogo = computed(() => {
   if (short.value) {
-    return shortLogoCustom.value || shortLogo
+    return shortLogoCustom.value || brandLogo || shortLogo
   }
   if (fullLogoCustom.value) {
     return fullLogoCustom.value
   }
-  return props.isDark ? darkModeLogo : logo
+  return brandLogo || (props.isDark ? darkModeLogo : logo)
 })
 
 const logOut = () => {
   window.location.replace('/sign-in')
 }
+
+onMounted(() => {
+  const saved = document.cookie.split('; ').find(row => row.startsWith('dark-mode='))
+  const isDark = saved ? JSON.parse(saved.split('=')[1]) : getDefaultDarkMode()
+  document.documentElement.classList.toggle('dark-mode', isDark)
+})
 
 getLogo().then((res) => {
   if (res && injectedBaseUrl) {
