@@ -90,7 +90,7 @@ const BRANDS: IBrandItem[] = [
       title: 'Europe Booking Assistance',
       favicon: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoFY1zaQlfCWlEYB2JRFmStkXaw8hZc3Nz5enq',
       shortLogo: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoFY1zaQlfCWlEYB2JRFmStkXaw8hZc3Nz5enq',
-      logo: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SonBhOejoJbvEq1OMct0W2wuByNZ6s4CY5kFGD',
+      logo: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoOMBjSaZ53wU9et0uZYREskrBGaODFl1J7mjb',
       backgroundImage: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoWYaXVJ11qDX6JmaUpMEZ5jNu7wCiSzhrvgV0',
       defaultLanguage: 'AZ',
       hideBalls: true,
@@ -137,7 +137,8 @@ const BRANDS: IBrandItem[] = [
     config: {
       title: 'Vata Fly',
       favicon: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoGmcHZNM6OtwS0DdhBLNq8x3pY1Pu7mcWsCr9',
-      logo: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoGmcHZNM6OtwS0DdhBLNq8x3pY1Pu7mcWsCr9',
+      shortLogo: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoGmcHZNM6OtwS0DdhBLNq8x3pY1Pu7mcWsCr9',
+      logo: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoQbElmmdb5kJHPzX3mYwNRsy4ZergShj7If2d',
       backgroundImage: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoATW7v4ntqW65x90cCjFiM3NfTukyzwYshEaV',
       loginLayout: 'vata-fly',
       defaultLanguage: 'AZ',
@@ -162,11 +163,12 @@ const BRANDS: IBrandItem[] = [
   },
   {
     // hosts: ['b2b.carlton.az'],
-    hosts: ['localhost'],
+    hosts: ['localhost','b2b.carlton.az'],
     config: {
       title: 'Carlton Travel Assistance',
       favicon: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoTSHjyUIw9cE7hRYbvXpdSDVfaPNgzxwLKkl4',
-      logo: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoTSHjyUIw9cE7hRYbvXpdSDVfaPNgzxwLKkl4',
+      shortLogo: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoTSHjyUIw9cE7hRYbvXpdSDVfaPNgzxwLKkl4',
+      logo: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoQryG2Kdb5kJHPzX3mYwNRsy4ZergShj7If2d',
       backgroundImage: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoixgpiUsOasZdLcGnRvyTYBxHEwm2bkeFI7UJ',
       mode: 'dark',
       loginLayout: 'carlton',
