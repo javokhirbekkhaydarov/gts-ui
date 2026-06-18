@@ -31,6 +31,7 @@ interface IBrandConfig {
   favicon: string
   colors: IBrandColors
   logo?: string
+  shortLogo?: string
   mode?: 'dark' | 'light'
   backgroundImage?: string
   loginLayout?: string
@@ -88,7 +89,11 @@ const BRANDS: IBrandItem[] = [
     config: {
       title: 'Europe Booking Assistance',
       favicon: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoFY1zaQlfCWlEYB2JRFmStkXaw8hZc3Nz5enq',
-      logo: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoFY1zaQlfCWlEYB2JRFmStkXaw8hZc3Nz5enq',
+      shortLogo: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoFY1zaQlfCWlEYB2JRFmStkXaw8hZc3Nz5enq',
+      logo: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SonBhOejoJbvEq1OMct0W2wuByNZ6s4CY5kFGD',
+      backgroundImage: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoWYaXVJ11qDX6JmaUpMEZ5jNu7wCiSzhrvgV0',
+      defaultLanguage: 'AZ',
+      hideBalls: true,
       colors: {
         primary: '#143AFF',
         hover: '#1230E8',
@@ -320,6 +325,11 @@ export const usePathBranding = () => {
     return config.logo || null
   }
 
+  const getBrandShortLogo = (): string | null => {
+    const config = getBrandingByDomain()
+    return config.shortLogo || null
+  }
+
   const getDefaultDarkMode = (): boolean => {
     const config = getBrandingByDomain()
     return config.mode === 'dark'
@@ -329,6 +339,7 @@ export const usePathBranding = () => {
     applyPathBranding,
     getBrandConfig,
     getBrandLogo,
+    getBrandShortLogo,
     getDefaultDarkMode,
     getLoginLayout,
     getDefaultLanguage,

@@ -32,8 +32,9 @@ const short = defineModel<boolean>('short', { default: false })
 const { getLogo } = useUser()
 const permissions = usePermission()
 const locale = inject<Ref<LocaleTypes>>('locale', ref('ru'))
-const { getBrandLogo, getDefaultDarkMode } = usePathBranding()
+const { getBrandLogo, getBrandShortLogo, getDefaultDarkMode } = usePathBranding()
 const brandLogo = getBrandLogo()
+const brandShortLogo = getBrandShortLogo()
 
 const isDipavia = window.location.href.includes('dipavia.uz')
 
@@ -66,7 +67,7 @@ const childrenRoutes = ref<ISidebarItem[]>([])
 
 const appLogo = computed(() => {
   if (short.value) {
-    return shortLogoCustom.value || brandLogo || shortLogo
+    return shortLogoCustom.value || brandShortLogo || brandLogo || shortLogo
   }
   if (fullLogoCustom.value) {
     return fullLogoCustom.value
