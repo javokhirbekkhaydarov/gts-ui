@@ -163,7 +163,7 @@ const BRANDS: IBrandItem[] = [
   },
   {
     // hosts: ['b2b.carlton.az'],
-    hosts: ['localhost','b2b.carlton.az'],
+    hosts: ['b2b.carlton.az'],
     config: {
       title: 'Carlton Travel Assistance',
       favicon: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoTSHjyUIw9cE7hRYbvXpdSDVfaPNgzxwLKkl4',
@@ -192,6 +192,30 @@ const BRANDS: IBrandItem[] = [
         sidebarBg: '#1C1208',
         sidebarBgHover: '#2D1E0C',
         sidebarText: '#FFFFFF'
+      }
+    }
+  },
+  {
+    // hosts: ['pro.goldenasialuxe.uz/'],
+    hosts: ['localhost', 'pro.goldenasialuxe.uz'],
+    config: {
+      title: 'Golden Asia Luxe',
+      favicon: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SolElEqceRFnAlurT9KI0JGv4qXH68ZNy5b7Le',
+      shortLogo: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SolElEqceRFnAlurT9KI0JGv4qXH68ZNy5b7Le',
+      logo: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3Sobose3ruLJPbFnC6DvoUphAlgjZE9BYKef2tw',
+      loginLayout: 'golden-asia-luxe',
+      colors: {
+        primary: '#F5A800',
+        hover: '#FDC621',
+        pressed: '#D49200',
+        subtler: '#f7f2dc',
+        subtle: '#FFF1B8',
+        subtleDarkMode: '#364156',
+        subtleDarkButton: '#4A4220',
+        subtleDarkButtonHover: '#5C512A',
+        subtleDarkButtonActive: '#6B5F32',
+        subtlerDarkMode: '#364156',
+        selectedSubtle: '#FFEA99'
       }
     }
   },
