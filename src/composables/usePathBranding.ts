@@ -204,6 +204,8 @@ const BRANDS: IBrandItem[] = [
       shortLogo: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SolElEqceRFnAlurT9KI0JGv4qXH68ZNy5b7Le',
       logo: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3Sobose3ruLJPbFnC6DvoUphAlgjZE9BYKef2tw',
       loginLayout: 'golden-asia-luxe',
+      backgroundImage: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoDizCOcE5GAEJghSjcI0fC1Fo2P79an8DmuQO',
+      hideBalls: true,
       colors: {
         primary: '#F5A800',
         hover: '#FDC621',
