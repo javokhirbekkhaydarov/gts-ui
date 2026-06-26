@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, onMounted, watch } from 'vue'
+import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
 import './EasyBackground.css'
 import { usePathBranding } from '@/composables/usePathBranding'
 
@@ -7,8 +7,28 @@ const props = defineProps<{
   routePath?: string
 }>()
 
-const { getBrandConfig } = usePathBranding()
-const { backgroundImage, hideBalls } = getBrandConfig()
+const { getBrandConfig, getBackgroundConfig } = usePathBranding()
+const { hideBalls } = getBrandConfig()
+const { backgroundImage, darkBackgroundImage } = getBackgroundConfig()
+
+const isDark = ref(document.documentElement.classList.contains('dark-mode'))
+
+const observer = new MutationObserver(() => {
+  isDark.value = document.documentElement.classList.contains('dark-mode')
+})
+
+onMounted(() => {
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] })
+})
+
+onUnmounted(() => {
+  observer.disconnect()
+})
+
+const currentBgImage = computed(() => {
+  if (isDark.value && darkBackgroundImage) return darkBackgroundImage
+  return backgroundImage
+})
 
 const colors = ['violet', 'violet', 'grey', 'green', 'blue', 'orange', 'grey']
 const minHeight = 125
@@ -68,8 +88,8 @@ interface Element {
     }"
   >
     <img
-      v-if="backgroundImage"
-      :src="backgroundImage"
+      v-if="currentBgImage"
+      :src="currentBgImage"
       style="object-fit: cover;"
       class="absolute inset-0 w-full h-full object-cover"
     />

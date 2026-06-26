@@ -34,6 +34,7 @@ interface IBrandConfig {
   shortLogo?: string
   mode?: 'dark' | 'light'
   backgroundImage?: string
+  darkBackgroundImage?: string
   loginLayout?: string
   defaultLanguage?: string
   hideBalls?: boolean
@@ -205,6 +206,7 @@ const BRANDS: IBrandItem[] = [
       logo: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3Sobose3ruLJPbFnC6DvoUphAlgjZE9BYKef2tw',
       loginLayout: 'golden-asia-luxe',
       backgroundImage: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoDizCOcE5GAEJghSjcI0fC1Fo2P79an8DmuQO',
+      darkBackgroundImage: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3So366T58PV35gTYsZ7q8PDi0du26JnjAEQzhke',
       hideBalls: true,
       colors: {
         primary: '#F5A800',
@@ -340,10 +342,11 @@ export const usePathBranding = () => {
 
   const isFooterHidden = (): boolean => getFooterConfig().hidden
 
-  const getBackgroundConfig = (): { backgroundImage: string | null; hideBalls: boolean } => {
+  const getBackgroundConfig = (): { backgroundImage: string | null; darkBackgroundImage: string | null; hideBalls: boolean } => {
     const config = getBrandingByDomain()
     return {
       backgroundImage: config.backgroundImage || null,
+      darkBackgroundImage: config.darkBackgroundImage || null,
       hideBalls: config.hideBalls === true
     }
   }
