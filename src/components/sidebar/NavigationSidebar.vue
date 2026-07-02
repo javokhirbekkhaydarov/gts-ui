@@ -75,8 +75,10 @@ const appLogo = computed(() => {
   return brandLogo || (props.isDark ? darkModeLogo : logo)
 })
 
+const emit = defineEmits<{ logOut: [] }>()
+
 const logOut = () => {
-  window.location.replace('/sign-in')
+  emit('logOut')
 }
 
 onMounted(() => {
