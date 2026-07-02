@@ -78,6 +78,7 @@ const appLogo = computed(() => {
 const emit = defineEmits<{ logOut: [] }>()
 
 const logOut = () => {
+  window.location.replace('/sign-in')
   emit('logOut')
 }
 
