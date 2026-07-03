@@ -223,6 +223,38 @@ const BRANDS: IBrandItem[] = [
       }
     }
   },
+  {
+    hosts: ['localhost', 'b2b.samflytravel.uz'],
+    config: {
+      title: 'Sam Fly Travel',
+      favicon: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SouQK5SfqiMN3Socvasbwj9Y0U6geR2yLEOIfr',
+      shortLogo: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SouQK5SfqiMN3Socvasbwj9Y0U6geR2yLEOIfr',
+      logo: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SozP0zKa9Q7biCDtTZ8v4NmG1U9gRceKIdj0SL',
+      backgroundImage: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3So0U5Bsa2ANsOlHIcvTi1XMn4YowdePtkJgzZp',
+      darkBackgroundImage: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoAwoT9yntqW65x90cCjFiM3NfTukyzwYshEaV',
+      hideBalls: true,
+      loginLayout: 'sam-fly',
+      footer: {
+        copyright: '© Sam Fly Travel',
+        showBrandLogos: false,
+        showPaymentLogos: false,
+        poweredBy: 'GTS'
+      },
+      colors: {
+        primary: '#F97316',
+        hover: '#FB8A2E',
+        pressed: '#E06510',
+        subtler: '#FEF0E7',
+        subtle: '#FDE8D6',
+        selectedSubtle: '#FBCFAD',
+        subtleDarkMode: '#3D1F08',
+        subtlerDarkMode: '#3D1F08',
+        subtleDarkButton: '#3D1F08',
+        subtleDarkButtonHover: '#4A2810',
+        subtleDarkButtonActive: '#5A3112'
+      }
+    }
+  }
 ]
 
 const DEFAULT_FOOTER: Required<IBrandFooter> = {
