@@ -198,7 +198,7 @@ const BRANDS: IBrandItem[] = [
   },
   {
     // hosts: ['pro.goldenasialuxe.uz/'],
-    hosts: ['localhost', 'pro.goldenasialuxe.uz'],
+    hosts: [ 'pro.goldenasialuxe.uz'],
     config: {
       title: 'Golden Asia Luxe',
       favicon: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SolElEqceRFnAlurT9KI0JGv4qXH68ZNy5b7Le',
@@ -224,7 +224,7 @@ const BRANDS: IBrandItem[] = [
     }
   },
   {
-    hosts: ['localhost', 'b2b.samflytravel.uz'],
+    hosts: ['localhost', 'test.globaltravel.space',  'b2b.samflytravel.uz'],
     config: {
       title: 'Sam Fly Travel',
       favicon: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SouQK5SfqiMN3Socvasbwj9Y0U6geR2yLEOIfr',
