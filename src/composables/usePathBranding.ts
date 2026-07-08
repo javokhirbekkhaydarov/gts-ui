@@ -224,7 +224,7 @@ const BRANDS: IBrandItem[] = [
     }
   },
   {
-    hosts: ['localhost', 'test.globaltravel.space',  'b2b.samflytravel.uz'],
+    hosts: ['localhost',  'b2b.samflytravel.uz'],
     config: {
       title: 'Sam Fly Travel',
       favicon: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SouQK5SfqiMN3Socvasbwj9Y0U6geR2yLEOIfr',
