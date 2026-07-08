@@ -167,11 +167,11 @@ const BRANDS: IBrandItem[] = [
     hosts: ['b2b.carlton.az'],
     config: {
       title: 'Carlton Travel Assistance',
-      favicon: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoTSHjyUIw9cE7hRYbvXpdSDVfaPNgzxwLKkl4',
-      shortLogo: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoTSHjyUIw9cE7hRYbvXpdSDVfaPNgzxwLKkl4',
-      logo: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoQryG2Kdb5kJHPzX3mYwNRsy4ZergShj7If2d',
-      backgroundImage: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoixgpiUsOasZdLcGnRvyTYBxHEwm2bkeFI7UJ',
-      mode: 'dark',
+      favicon: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SospPUxxZQp3eJKQOUZNdousW1YDvzHrmLt9Ch',
+      shortLogo: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SospPUxxZQp3eJKQOUZNdousW1YDvzHrmLt9Ch',
+      logo: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoQAA7lYLdb5kJHPzX3mYwNRsy4ZergShj7If2',
+      // backgroundImage: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoixgpiUsOasZdLcGnRvyTYBxHEwm2bkeFI7UJ',
+      mode: 'light',
       loginLayout: 'carlton',
       defaultLanguage: 'AZ',
       hideBalls: true,
@@ -179,9 +179,9 @@ const BRANDS: IBrandItem[] = [
         hidden: false
       },
       colors: {
-        primary: '#CDA63A',
-        hover: '#B8922F',
-        pressed: '#A37E28',
+        primary: '#FB9B02',
+        hover: '#faa41c',
+        pressed: '#da8704',
         subtler: '#FDF6E3',
         subtle: '#FAF0D0',
         selectedSubtle: '#F5E4A8',
@@ -190,9 +190,9 @@ const BRANDS: IBrandItem[] = [
         subtleDarkButton: '#3D2A0A',
         subtleDarkButtonHover: '#4A3310',
         subtleDarkButtonActive: '#563C14',
-        sidebarBg: '#1C1208',
-        sidebarBgHover: '#2D1E0C',
-        sidebarText: '#FFFFFF'
+        // sidebarBg: '#1C1208',
+        // sidebarBgHover: '#2D1E0C',
+        // sidebarText: '#FFFFFF'
       }
     }
   },
