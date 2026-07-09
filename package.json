@@ -1,6 +1,6 @@
 {
   "name": "@g-gts/ui",
-  "version": "1.5.62",
+  "version": "1.5.63",
   "description": "GTS UI component library",
   "main": "dist/gts-ui.es.js",
   "module": "dist/gts-ui.es.js",
