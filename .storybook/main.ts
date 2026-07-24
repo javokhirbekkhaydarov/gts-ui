@@ -24,7 +24,11 @@ const config: StorybookConfig = {
     config.optimizeDeps = {
       include: ['primevue/tooltip', 'primevue/button'],
     };
-    config.base = process.env.NODE_ENV === 'production' ? '/gts-ui/' : '/'
+    // GitHub Pages'da sayt /gts-ui/ subpath'da turadi, Vercel'da esa root'da.
+    // STORYBOOK_BASE bo'lsa – o'sha ishlatiladi (Vercel'da "/" qilib beriladi).
+    config.base =
+      process.env.STORYBOOK_BASE ||
+      (process.env.VERCEL ? '/' : process.env.NODE_ENV === 'production' ? '/gts-ui/' : '/')
     return config
   },
 }
