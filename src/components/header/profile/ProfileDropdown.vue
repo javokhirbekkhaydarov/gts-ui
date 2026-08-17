@@ -25,7 +25,12 @@ const name = computed(() => {
   if (props.user.type_cabinet === 'BUSINESS') {
     return props.user?.company_info?.name
   } else if (props.user.user_type === 'STAFF') {
-    return `${props.user?.staff?.firstname} ${props.user?.staff?.lastname}`
+    const staffName = [props.user?.staff?.firstname, props.user?.staff?.lastname]
+      .filter(Boolean)
+      .join(' ')
+    if (staffName) {
+      return staffName
+    }
   }
   return props.user?.username || props.user?.email
 })
