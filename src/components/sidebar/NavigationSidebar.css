@@ -3,7 +3,7 @@
   box-sizing: border-box;
   height: 100dvh;
   display: grid;
-  grid-template-rows: 72px auto 72px;
+  grid-template-rows: 72px minmax(0, 1fr);
   background-color: var(--background-neutral-subtle);
 }
 .navigation-sidebar.short .navigation-sidebar__link {
@@ -23,7 +23,7 @@
 }
 .navigation-sidebar.short {
   width: var(--sidebar-width);
-  grid-template-rows: 97px auto 72px;
+  grid-template-rows: 97px minmax(0, 1fr);
 }
 .navigation-sidebar__body {
   display: flex;
@@ -55,7 +55,8 @@
   font-size: 20px;
 }
 .navigation-sidebar .scroll-height {
-  min-height: calc(100vh - 97px);
+  height: 100%;
+  min-height: 0;
 }
 .navigation-sidebar .scroll-height .p-scrollpanel-bar-y {
   width: 3px;
