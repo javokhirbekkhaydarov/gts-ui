@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { computed, ComputedRef, inject, onMounted, Ref, ref, watchEffect } from 'vue'
+import { computed, ComputedRef, inject, onMounted, Ref, ref, watch, watchEffect } from 'vue'
 import NavigationSidebarItem from './NavigationSidebarItem.vue'
 import ScrollPanel from 'primevue/scrollpanel'
 import { ISidebarItem } from '@/types/ui'
@@ -9,6 +9,8 @@ import { LocaleTypes } from '@/types'
 import { usePermission } from '@/composables/usePermission'
 import { useUser } from '@/composables/useUser'
 import { usePathBranding } from '@/composables/usePathBranding'
+import { useWindowSize } from '@/composables/useWindowSize'
+import { MOBILE_SIDEBAR_WIDTH } from '@/constants/sidebar'
 import Skeleton from 'primevue/skeleton'
 
 const dipLogo = 'https://api.globaltravel.space/media/imgs/logo/dip-logo.png'
@@ -28,7 +30,9 @@ const props = withDefaults(
 )
 
 const short = defineModel<boolean>('short', { default: false })
+const mobileOpen = defineModel<boolean>('mobileOpen', { default: false })
 
+const { width } = useWindowSize()
 const { getLogo } = useUser()
 const permissions = usePermission()
 const locale = inject<Ref<LocaleTypes>>('locale', ref('ru'))
@@ -75,6 +79,34 @@ const appLogo = computed(() => {
   return brandLogo || (props.isDark ? darkModeLogo : logo)
 })
 
+const isMobile = computed(() => width.value < MOBILE_SIDEBAR_WIDTH)
+
+function onToggleClick() {
+  if (isMobile.value) {
+    mobileOpen.value = false
+  } else {
+    short.value = !short.value
+  }
+}
+
+watch(
+  isMobile,
+  (value) => {
+    if (value) {
+      short.value = false
+      mobileOpen.value = false
+    }
+  },
+  { immediate: true },
+)
+
+watch(
+  () => props.routeName,
+  () => {
+    mobileOpen.value = false
+  },
+)
+
 const emit = defineEmits<{ logOut: [] }>()
 
 const logOut = () => {
@@ -115,7 +147,13 @@ watchEffect(() => {
 </script>
 
 <template>
-  <aside :class="['navigation-sidebar', { short }]">
+  <div
+    class="navigation-sidebar__backdrop"
+    :class="{ visible: mobileOpen }"
+    @click="mobileOpen = false"
+  ></div>
+
+  <aside :class="['navigation-sidebar', { short, open: mobileOpen }]">
     <section class="navigation-sidebar__header">
       <a :href="baseRoute">
         <div v-if="logoLoading">
@@ -125,7 +163,7 @@ watchEffect(() => {
         <img v-else :src="appLogo" alt="" class="navigation-sidebar__logo" />
       </a>
 
-      <i class="icon-Outline-Arrow-LeftSquare toggle text-dark" @click="short = !short"></i>
+      <i class="icon-Outline-Arrow-LeftSquare toggle text-dark" @click="onToggleClick"></i>
     </section>
 
     <ScrollPanel class="scroll-height">

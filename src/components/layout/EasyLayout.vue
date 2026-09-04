@@ -4,6 +4,7 @@ import NavigationSidebar from '../sidebar/NavigationSidebar.vue'
 import {useWindowSize} from '@/composables/useWindowSize'
 import {ref, watch, provide, computed} from 'vue'
 import {LocaleTypes, EnvTypes} from '@/types'
+import {MOBILE_SIDEBAR_WIDTH} from '@/constants/sidebar'
 
 const props = defineProps<{
   routeName: string
@@ -24,10 +25,14 @@ provide('env', computed(() => props.env || 'production'))
 provide('isContract', computed(() => props.isContract))
 
 const short = ref(false)
+const mobileOpen = ref(false)
 const logoBaseUrl = `https://api.globaltravel.space/media/imgs/footer`
 
 function sidebarToggle() {
-  if (width.value < 1420 && !short.value) {
+  if (width.value < MOBILE_SIDEBAR_WIDTH) {
+    short.value = false
+    mobileOpen.value = false
+  } else if (width.value < 1420 && !short.value) {
     short.value = true
   } else if (width.value >= 1420 && short.value) {
     short.value = false
@@ -45,10 +50,16 @@ watch(width, () => {
   <div :class="['easy-layout', { short }]">
     <EasyBackground/>
 
-    <NavigationSidebar v-model:short="short" :routeName :isDark @logOut="emit('logOut')"/>
+    <NavigationSidebar v-model:short="short" v-model:mobileOpen="mobileOpen" :routeName :isDark @logOut="emit('logOut')"/>
 
     <div class="easy-layout__content">
       <div class="easy-layout__header">
+        <i
+          v-if="width < MOBILE_SIDEBAR_WIDTH && !mobileOpen"
+          class="icon-Outline-Category easy-layout__sidebar-toggle"
+          @click="mobileOpen = true"
+        ></i>
+
         <slot name="header"></slot>
       </div>
       <div class="easy-layout__scrollbar scrollbar">
@@ -100,6 +111,21 @@ watch(width, () => {
   gap: 8px;
   box-sizing: border-box;
   padding-right: 8px;
+}
+
+.easy-layout__sidebar-toggle {
+  margin-right: auto;
+  margin-left: 8px;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--text-subtle);
+}
+
+@media (max-width: 699px) {
+  .easy-layout,
+  .easy-layout.short {
+    --sidebar-width: 0px;
+  }
 }
 
 .easy-layout__header {

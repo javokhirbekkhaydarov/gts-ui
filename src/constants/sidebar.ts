@@ -157,3 +157,5 @@ export const sidebarItems = [
     ]
   }
 ] as ISidebarItem[]
+
+export const MOBILE_SIDEBAR_WIDTH = 700
