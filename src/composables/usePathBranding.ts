@@ -60,8 +60,8 @@ const DEFAULT_BRAND: IBrandConfig = {
     subtlerDarkMode: '#364156',
     subtleDarkButton: '#1A3A4A',
     subtleDarkButtonHover: '#234D5E',
-    subtleDarkButtonActive: '#2C5F72'
-  }
+    subtleDarkButtonActive: '#2C5F72',
+  },
 }
 
 const BRANDS: IBrandItem[] = [
@@ -81,9 +81,9 @@ const BRANDS: IBrandItem[] = [
         subtleDarkButton: '#1A3A4A',
         subtleDarkButtonHover: '#234D5E',
         subtleDarkButtonActive: '#2C5F72',
-        selectedSubtle: '#D0E4FF'
-      }
-    }
+        selectedSubtle: '#D0E4FF',
+      },
+    },
   },
   {
     hosts: ['b2b.europe.az'],
@@ -109,9 +109,9 @@ const BRANDS: IBrandItem[] = [
         selectedSubtle: '#FFEA99',
         primaryDark: '#FFC700',
         hoverDark: '#E6B300',
-        pressedDark: '#CC9F00'
-      }
-    }
+        pressedDark: '#CC9F00',
+      },
+    },
   },
   {
     hosts: ['westdev'],
@@ -129,9 +129,9 @@ const BRANDS: IBrandItem[] = [
         subtleDarkButtonHover: '#5C512A',
         subtleDarkButtonActive: '#6B5F32',
         subtlerDarkMode: '#364156',
-        selectedSubtle: '#FFEA99'
-      }
-    }
+        selectedSubtle: '#FFEA99',
+      },
+    },
   },
   {
     hosts: ['travel.vatafly.com'],
@@ -145,7 +145,7 @@ const BRANDS: IBrandItem[] = [
       defaultLanguage: 'AZ',
       hideBalls: true,
       footer: {
-        hidden: true
+        hidden: true,
       },
       colors: {
         primary: '#4A85DD',
@@ -158,9 +158,9 @@ const BRANDS: IBrandItem[] = [
         subtlerDarkMode: '#21314D',
         subtleDarkButton: '#1E2A41',
         subtleDarkButtonHover: '#233452',
-        subtleDarkButtonActive: '#263C5F'
-      }
-    }
+        subtleDarkButtonActive: '#263C5F',
+      },
+    },
   },
   {
     // hosts: ['b2b.carlton.az'],
@@ -176,7 +176,7 @@ const BRANDS: IBrandItem[] = [
       defaultLanguage: 'AZ',
       hideBalls: true,
       footer: {
-        hidden: false
+        hidden: false,
       },
       colors: {
         primary: '#FB9B02',
@@ -193,12 +193,12 @@ const BRANDS: IBrandItem[] = [
         // sidebarBg: '#1C1208',
         // sidebarBgHover: '#2D1E0C',
         // sidebarText: '#FFFFFF'
-      }
-    }
+      },
+    },
   },
   {
     // hosts: ['pro.goldenasialuxe.uz/'],
-    hosts: [ 'pro.goldenasialuxe.uz'],
+    hosts: ['pro.goldenasialuxe.uz'],
     config: {
       title: 'Golden Asia Luxe',
       favicon: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SolElEqceRFnAlurT9KI0JGv4qXH68ZNy5b7Le',
@@ -219,12 +219,40 @@ const BRANDS: IBrandItem[] = [
         subtleDarkButtonHover: '#5C512A',
         subtleDarkButtonActive: '#6B5F32',
         subtlerDarkMode: '#364156',
-        selectedSubtle: '#FFEA99'
-      }
-    }
+        selectedSubtle: '#FFEA99',
+      },
+    },
   },
   {
-    hosts: ['localhost',  'b2b.samflytravel.uz'],
+    hosts: ['localhost', 'texrontravel.uz'],
+    config: {
+      title: 'TexronTravel',
+      favicon: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoAYEtAjntqW65x90cCjFiM3NfTukyzwYshEaV',
+      shortLogo: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoAYEtAjntqW65x90cCjFiM3NfTukyzwYshEaV',
+      logo: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3So2CHRCMJhogkaqm6W3u1jVpwxYJEvPKFRbBMi',
+      loginLayout: 'texron',
+      hideBalls: false,
+      defaultLanguage: 'RU',
+      colors: {
+        primary: '#191D45',
+        hover: '#21265A',
+        pressed: '#121431',
+        subtler: '#F0F1FA',
+        subtle: '#E1E3F4',
+        selectedSubtle: '#C7CAEB',
+        subtleDarkMode: '#2B2D45',
+        subtlerDarkMode: '#2B2D45',
+        subtleDarkButton: '#27293F',
+        subtleDarkButtonHover: '#333652',
+        subtleDarkButtonActive: '#3D4062',
+        primaryDark: '#636FE3',
+        hoverDark: '#7D87E8',
+        pressedDark: '#4553DE',
+      },
+    },
+  },
+  {
+    hosts: ['b2b.samflytravel.uz'],
     config: {
       title: 'Sam Fly Travel',
       favicon: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SouQK5SfqiMN3Socvasbwj9Y0U6geR2yLEOIfr',
@@ -238,7 +266,7 @@ const BRANDS: IBrandItem[] = [
         copyright: '© Sam Fly Travel',
         showBrandLogos: false,
         showPaymentLogos: false,
-        poweredBy: 'GTS'
+        poweredBy: 'GTS',
       },
       colors: {
         primary: '#F97316',
@@ -251,10 +279,10 @@ const BRANDS: IBrandItem[] = [
         subtlerDarkMode: '#3D1F08',
         subtleDarkButton: '#3D1F08',
         subtleDarkButtonHover: '#4A2810',
-        subtleDarkButtonActive: '#5A3112'
-      }
-    }
-  }
+        subtleDarkButtonActive: '#5A3112',
+      },
+    },
+  },
 ]
 
 const DEFAULT_FOOTER: Required<IBrandFooter> = {
@@ -262,7 +290,7 @@ const DEFAULT_FOOTER: Required<IBrandFooter> = {
   copyright: '© Globaltravel.space | All rights reserved',
   showBrandLogos: true,
   showPaymentLogos: true,
-  poweredBy: null
+  poweredBy: null,
 }
 
 export const usePathBranding = () => {
@@ -374,12 +402,16 @@ export const usePathBranding = () => {
 
   const isFooterHidden = (): boolean => getFooterConfig().hidden
 
-  const getBackgroundConfig = (): { backgroundImage: string | null; darkBackgroundImage: string | null; hideBalls: boolean } => {
+  const getBackgroundConfig = (): {
+    backgroundImage: string | null
+    darkBackgroundImage: string | null
+    hideBalls: boolean
+  } => {
     const config = getBrandingByDomain()
     return {
       backgroundImage: config.backgroundImage || null,
       darkBackgroundImage: config.darkBackgroundImage || null,
-      hideBalls: config.hideBalls === true
+      hideBalls: config.hideBalls === true,
     }
   }
 
@@ -408,6 +440,6 @@ export const usePathBranding = () => {
     getDefaultLanguage,
     isFooterHidden,
     getFooterConfig,
-    getBackgroundConfig
+    getBackgroundConfig,
   }
 }
