@@ -17,7 +17,7 @@ export interface IProvider {
   time_gmt: string
   currency: string
   iata_number: string
-  is_test: boolean
+  is_test: booleanxl
   status: string
   balance: number
 }

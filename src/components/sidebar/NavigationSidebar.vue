@@ -36,9 +36,21 @@ const { width } = useWindowSize()
 const { getLogo } = useUser()
 const permissions = usePermission()
 const locale = inject<Ref<LocaleTypes>>('locale', ref('ru'))
-const { getBrandLogo, getBrandShortLogo, getDefaultDarkMode } = usePathBranding()
-const brandLogo = getBrandLogo()
-const brandShortLogo = getBrandShortLogo()
+const {
+  getBrandLogo,
+  getBrandShortLogo,
+  getBrandDarkLogo,
+  getBrandDarkShortLogo,
+  getDefaultDarkMode,
+} = usePathBranding()
+const brandDarkLogo = getBrandDarkLogo()
+const brandDarkShortLogo = getBrandDarkShortLogo()
+
+// Dark rejimda brendning dark logosi bo'lsa shu ishlatiladi, bo'lmasa doimiy logo
+const brandLogo = computed(() => (props.isDark && brandDarkLogo ? brandDarkLogo : getBrandLogo()))
+const brandShortLogo = computed(() =>
+  props.isDark && brandDarkShortLogo ? brandDarkShortLogo : getBrandShortLogo(),
+)
 
 const isDipavia = window.location.href.includes('dipavia.uz')
 
@@ -71,12 +83,12 @@ const childrenRoutes = ref<ISidebarItem[]>([])
 
 const appLogo = computed(() => {
   if (short.value) {
-    return shortLogoCustom.value || brandShortLogo || brandLogo || shortLogo
+    return shortLogoCustom.value || brandShortLogo.value || brandLogo.value || shortLogo
   }
   if (fullLogoCustom.value) {
     return fullLogoCustom.value
   }
-  return brandLogo || (props.isDark ? darkModeLogo : logo)
+  return brandLogo.value || (props.isDark ? darkModeLogo : logo)
 })
 
 const isMobile = computed(() => width.value < MOBILE_SIDEBAR_WIDTH)

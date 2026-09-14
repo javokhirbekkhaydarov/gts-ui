@@ -32,6 +32,8 @@ interface IBrandConfig {
   colors: IBrandColors
   logo?: string
   shortLogo?: string
+  darkLongLogo?: string
+  darkShortLogo?: string
   mode?: 'dark' | 'light'
   backgroundImage?: string
   darkBackgroundImage?: string
@@ -224,7 +226,42 @@ const BRANDS: IBrandItem[] = [
     },
   },
   {
-    hosts: ['localhost', 'texrontravel.uz'],
+    hosts: ['localhost', 'eternaltravel.team'],
+    config: {
+      title: 'Eternal Travel',
+      favicon: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoidMVJwQsOasZdLcGnRvyTYBxHEwm2bkeFI7U',
+      logo: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoBEWjmfjcVJxcmbFT3DU1aiqg08up6M5KZhen',
+      shortLogo: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoRxeSQwFCNJqBZW8uPL2dx3OrGa6tS7HDwzYk',
+      darkShortLogo: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoidMVJwQsOasZdLcGnRvyTYBxHEwm2bkeFI7U',
+      darkLongLogo: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3So9sCAG36vnktgR63qXCxlcQOz8UTDeiVfpwKa',
+      backgroundImage: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SojvgHdIGI5qWXFmNnz70tsE6DYarp29gGOidK',
+      mode: 'light',
+      loginLayout: 'eternal',
+      defaultLanguage: 'RU',
+      hideBalls: true,
+      footer: {
+        hidden: false,
+      },
+      colors: {
+        primary: '#010A4D',
+        hover: '#020F74',
+        pressed: '#010732',
+        subtler: '#F0F2FF',
+        subtle: '#DBE0FF',
+        selectedSubtle: '#C2C9FF',
+        subtleDarkMode: '#242742',
+        subtlerDarkMode: '#242742',
+        subtleDarkButton: '#1E223E',
+        subtleDarkButtonHover: '#282D53',
+        subtleDarkButtonActive: '#323867',
+        primaryDark: '#5E6FED',
+        hoverDark: '#7F8CF1',
+        pressedDark: '#3E52EA',
+      },
+    },
+  },
+  {
+    hosts: ['texrontravel.uz'],
     config: {
       title: 'TexronTravel',
       favicon: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoAYEtAjntqW65x90cCjFiM3NfTukyzwYshEaV',
@@ -425,6 +462,16 @@ export const usePathBranding = () => {
     return config.shortLogo || null
   }
 
+  const getBrandDarkLogo = (): string | null => {
+    const config = getBrandingByDomain()
+    return config.darkLongLogo || null
+  }
+
+  const getBrandDarkShortLogo = (): string | null => {
+    const config = getBrandingByDomain()
+    return config.darkShortLogo || null
+  }
+
   const getDefaultDarkMode = (): boolean => {
     const config = getBrandingByDomain()
     return config.mode === 'dark'
@@ -435,6 +482,8 @@ export const usePathBranding = () => {
     getBrandConfig,
     getBrandLogo,
     getBrandShortLogo,
+    getBrandDarkLogo,
+    getBrandDarkShortLogo,
     getDefaultDarkMode,
     getLoginLayout,
     getDefaultLanguage,
