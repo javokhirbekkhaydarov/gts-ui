@@ -226,7 +226,7 @@ const BRANDS: IBrandItem[] = [
     },
   },
   {
-    hosts: ['localhost', 'eternaltravel.team'],
+    hosts: ['localhost', 'air.eternaltravel.team'],
     config: {
       title: 'Eternal Travel',
       favicon: 'https://qtmxmkrytw.ufs.sh/f/upwn8ziMN3SoidMVJwQsOasZdLcGnRvyTYBxHEwm2bkeFI7U',
