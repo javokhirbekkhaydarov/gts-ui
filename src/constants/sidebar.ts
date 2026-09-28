@@ -9,6 +9,7 @@ export const sidebarItems = [
     label: 'home',
     code: 'search',
     internal: true,
+    externalPath: '/flight',
     pages: ['home']
   },
   {
@@ -34,6 +35,7 @@ export const sidebarItems = [
     label: 'search',
     code: 'search',
     internal: true,
+    externalPath: '/flight/search',
     pages: ['search']
   },
   {
@@ -43,7 +45,7 @@ export const sidebarItems = [
     pages: ['extranet', 'extranet-create-description', 'extranet-create', 'charter'],
     children: [
       {
-        path: '/charter',
+        path: '/flight/charter',
         label: 'charters',
         code: 'provider-charter-list',
         pages: ['charter']
@@ -63,6 +65,7 @@ export const sidebarItems = [
     label: 'orders',
     code: 'list-own-order',
     internal: true,
+    externalPath: '/flight/orders',
     pages: ['orders']
   },
   {
@@ -94,6 +97,7 @@ export const sidebarItems = [
         label: 'basicIndicators',
         code: 'customize-list',
         internal: true,
+        externalPath: '/flight/reports',
         pages: ['reports', 'reports/basic-indicators']
       }
     ]
