@@ -8,6 +8,8 @@ import { lang } from '@/constants/lang'
 import { LocaleTypes } from '@/types'
 import { usePermission } from '@/composables/usePermission'
 import { useUser } from '@/composables/useUser'
+import { useImpersonation } from '@/composables/useImpersonation'
+import { isImpersonationTab } from '@/utils/impersonation'
 import { usePathBranding } from '@/composables/usePathBranding'
 import { useWindowSize } from '@/composables/useWindowSize'
 import { MOBILE_SIDEBAR_WIDTH } from '@/constants/sidebar'
@@ -34,6 +36,7 @@ const mobileOpen = defineModel<boolean>('mobileOpen', { default: false })
 
 const { width } = useWindowSize()
 const { getLogo } = useUser()
+const { exit: exitImpersonation } = useImpersonation()
 const permissions = usePermission()
 const locale = inject<Ref<LocaleTypes>>('locale', ref('ru'))
 const {
@@ -122,6 +125,10 @@ watch(
 const emit = defineEmits<{ logOut: [] }>()
 
 const logOut = () => {
+  if (isImpersonationTab()) {
+    exitImpersonation()
+    return
+  }
   window.location.replace('/sign-in')
   emit('logOut')
 }

@@ -1,8 +1,10 @@
 <script lang="ts" setup>
 import EasyBackground from '../background/EasyBackground.vue'
 import NavigationSidebar from '../sidebar/NavigationSidebar.vue'
+import EasyImpersonationBanner from '../impersonation/EasyImpersonationBanner.vue'
+import {useImpersonation} from '@/composables/useImpersonation'
 import {useWindowSize} from '@/composables/useWindowSize'
-import {ref, watch, provide, computed} from 'vue'
+import {ref, watch, provide, computed, onMounted} from 'vue'
 import {LocaleTypes, EnvTypes} from '@/types'
 import {MOBILE_SIDEBAR_WIDTH} from '@/constants/sidebar'
 
@@ -18,6 +20,7 @@ const props = defineProps<{
 const emit = defineEmits<{ logOut: [] }>()
 
 const {width} = useWindowSize()
+const {active: isImpersonating, verify: verifyImpersonation} = useImpersonation(props.baseUrl)
 
 provide('locale', computed(() => props.locale))
 provide('baseUrl', computed(() => props.baseUrl || 'https://api.globaltravel.space'))
@@ -44,10 +47,15 @@ sidebarToggle()
 watch(width, () => {
   sidebarToggle()
 })
+
+onMounted(() => {
+  verifyImpersonation()
+})
 </script>
 
 <template>
-  <div :class="['easy-layout', { short }]">
+  <EasyImpersonationBanner v-if="isImpersonating" :baseUrl="baseUrl"/>
+  <div :class="['easy-layout', { short, impersonating: isImpersonating }]">
     <EasyBackground/>
 
     <NavigationSidebar v-model:short="short" v-model:mobileOpen="mobileOpen" :routeName :isDark @logOut="emit('logOut')"/>
@@ -101,6 +109,11 @@ watch(width, () => {
 
 .easy-layout.short {
   --sidebar-width: 90px;
+}
+
+.easy-layout.impersonating {
+  top: var(--impersonation-banner-height, 48px);
+  height: calc(100dvh - var(--impersonation-banner-height, 48px));
 }
 
 .easy-layout__content {

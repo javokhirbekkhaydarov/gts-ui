@@ -30,10 +30,11 @@ export default defineConfig({
       fileName: (format) => `gts-ui.${format}.js`,
     },
     rollupOptions: {
-      external: ['vue'],
+      external: ['vue', 'axios'],
       output: {
         globals: {
           vue: 'Vue',
+          axios: 'axios',
         },
         exports: "named",
         assetFileNames: (assetInfo: PreRenderedAsset): string => {

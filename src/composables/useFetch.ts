@@ -1,4 +1,10 @@
 import { inject, ComputedRef } from 'vue'
+import {
+  endImpersonationSession,
+  getImpersonationHeader,
+  goToImpersonationEnded,
+  isImpersonationTab,
+} from '@/utils/impersonation'
 
 const BASE_URL = 'https://api2.globaltravel.space'
 interface RequestConfig {
@@ -35,6 +41,13 @@ export function useFetch(config: RequestConfig = {}) {
     url: string,
     { data, params, headers = {}, ...customConfig }: RequestConfig & { data?: unknown } = {},
   ): Promise<T> => {
+    const impersonationHeader = getImpersonationHeader()
+    if (!impersonationHeader && isImpersonationTab()) {
+      endImpersonationSession()
+      goToImpersonationEnded()
+      throw new Error('Impersonation session expired')
+    }
+
     try {
       const response = await fetch(createUrl(url, params), {
         method,
@@ -42,11 +55,17 @@ export function useFetch(config: RequestConfig = {}) {
           'Content-Type': 'application/json',
           ...defaultHeaders,
           ...headers,
+          ...(impersonationHeader ? { Authorization: impersonationHeader } : {}),
         },
-        credentials: 'include',
+        credentials: impersonationHeader ? 'omit' : 'include',
         body: data ? JSON.stringify(data) : undefined,
         ...customConfig,
       })
+
+      if (response.status === 401 && impersonationHeader) {
+        endImpersonationSession()
+        goToImpersonationEnded()
+      }
 
       return await handleResponse<T>(response)
     } catch (err) {

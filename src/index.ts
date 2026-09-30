@@ -42,6 +42,7 @@ import EasyPaymentModal from './components/payment/PaymentModal.vue';
 import EasyInputNumber from "@/components/input-number/EasyInputNumber.vue";
 import EasyLoginModal from './components/login/EasyLoginModal.vue';
 import { usePathBranding } from './composables/usePathBranding';
+import { installImpersonationInterceptor } from './utils/impersonation';
 
 const components = [
   EasyInput,
@@ -89,6 +90,7 @@ export default {
   install(app: App) {
     const { applyPathBranding } = usePathBranding();
     applyPathBranding();
+    installImpersonationInterceptor();
 
     components.forEach(component => {
       const componentName = component.name || component.__name;
@@ -171,3 +173,18 @@ export { useUser } from './composables/useUser';
 export { usePathBranding } from './composables/usePathBranding';
 
 
+export { useImpersonation } from './composables/useImpersonation';
+export {
+  IMPERSONATION_ENDED_PATH,
+  getImpersonationAuth,
+  getImpersonationContext,
+  getImpersonationHeader,
+  isImpersonating,
+  isImpersonationTab,
+  getActiveIdentity,
+  setActiveIdentity,
+  getActiveFlowStorage,
+  endImpersonationSession,
+  goToImpersonationEnded
+} from './utils/impersonation';
+export type { ImpersonationAuth, ImpersonationContext } from './utils/impersonation';

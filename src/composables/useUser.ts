@@ -3,6 +3,7 @@ import {IUser} from '@/types/user'
 import {catcher} from '@/utils/catcher'
 import {useFetch} from './useFetch'
 import {IResponse} from '@/types'
+import {getActiveIdentity, setActiveIdentity} from '@/utils/impersonation'
 
 export const useUser = (baseUrl?: string) => {
   const {get} = useFetch({baseUrl})
@@ -10,16 +11,16 @@ export const useUser = (baseUrl?: string) => {
   const user = ref<IUser>()
 
   const fetchUser = catcher(async () => {
-    const userType = localStorage.getItem('userType')
+    const userType = getActiveIdentity('userType')
 
     if (userType === 'STAFF') {
-      const id = localStorage.getItem('uid')
+      const id = getActiveIdentity('uid')
       const {data} = await get<IResponse<{ staff: IUser }>>(`/v1/users/employee/${id}`)
       user.value = data.staff
 
       const currentCurrency = data.staff?.parent?.currency?.code
       if (currentCurrency) {
-        localStorage.setItem('currentUserCurrency', currentCurrency)
+        setActiveIdentity('currentUserCurrency', currentCurrency)
       }
 
     } else {
@@ -27,7 +28,7 @@ export const useUser = (baseUrl?: string) => {
       user.value = data
 
       if (data?.currency?.code) {
-        localStorage.setItem('currentUserCurrency', data.currency.code)
+        setActiveIdentity('currentUserCurrency', data.currency.code)
       }
     }
   })

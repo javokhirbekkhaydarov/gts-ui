@@ -1,11 +1,12 @@
 import { computed } from 'vue'
+import { getActiveIdentity } from '@/utils/impersonation'
 import { ISidebarItem } from '@/types/ui'
 import { sidebarItems } from '@/constants/sidebar'
 
 export const usePermission = () => {
 
-  const apiList = localStorage.getItem('apis')
-  const userType = localStorage.getItem('userType') ?? 'AGENT'
+  const apiList = getActiveIdentity('apis')
+  const userType = getActiveIdentity('userType') ?? 'AGENT'
 
   const definePermission = (code: string) => {
     if (code === 'home') return true

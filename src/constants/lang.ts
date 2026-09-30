@@ -3,6 +3,12 @@ import { LocaleTypes } from "@/types";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const lang: Record<LocaleTypes, any> = {
   uz: {
+    impersonation: {
+      title: 'Majburiy kirish',
+      reason: 'Sabab',
+      remaining: 'Qoldi',
+      exit: 'Kabinetdan chiqish',
+    },
     sidebar: {
       home: 'Asosiy',
       suppliers: 'Yetkazib beruvchilar',
@@ -55,6 +61,12 @@ export const lang: Record<LocaleTypes, any> = {
     },
   },
   ru: {
+    impersonation: {
+      title: 'Принудительный вход',
+      reason: 'Причина',
+      remaining: 'Осталось',
+      exit: 'Выйти из кабинета',
+    },
     sidebar: {
       home: 'Главная',
       suppliers: 'Поставщики',
@@ -107,6 +119,12 @@ export const lang: Record<LocaleTypes, any> = {
     },
   },
   az: {
+    impersonation: {
+      title: 'Məcburi giriş',
+      reason: 'Səbəb',
+      remaining: 'Qalıb',
+      exit: 'Kabinetdən çıxış',
+    },
     sidebar: {
       home: 'Əsas səhifə',
       suppliers: 'Təchizatçılar',
@@ -159,6 +177,12 @@ export const lang: Record<LocaleTypes, any> = {
     },
   },
   en: {
+    impersonation: {
+      title: 'Forced login',
+      reason: 'Reason',
+      remaining: 'Remaining',
+      exit: 'Exit cabinet',
+    },
     sidebar: {
       home: 'Home',
       suppliers: 'Suppliers',
