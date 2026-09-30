@@ -1,9 +1,8 @@
 <script lang="ts" setup>
 import {ISidebarItem} from '@/types/ui'
-import {computed, ComputedRef, inject, ref} from 'vue'
+import {computed, ref} from 'vue'
 
 const open = ref(false)
-const isContract = inject<ComputedRef<boolean>>('isContract')
 
 const props = defineProps<{
   item: ISidebarItem
@@ -30,7 +29,7 @@ const name = computed(()=>{
         <template v-for="child of props.item.children" :key="child.path">
           <template v-if="child.path">
             <router-link
-              v-if="child.internal && !isContract"
+              v-if="child.internal"
               :to="child.path"
               :class="['navigation-sidebar-dropdown__trigger ', { active: child?.pages?.includes(name)}]"
               style="padding-left: 24px"
@@ -39,7 +38,7 @@ const name = computed(()=>{
             </router-link>
             <a
               v-else
-              :href="isContract ? child.externalPath ?? child.path : child.path"
+              :href="child.path"
               :class="['navigation-sidebar-dropdown__trigger ', { active: child?.pages?.includes(name)}]"
             >
               {{ child.label }}

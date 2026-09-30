@@ -17,7 +17,6 @@ export interface ISidebarItem {
   children?: ISidebarItem[]
   disabled?: boolean,
   internal?: boolean,
-  externalPath?: string,
   pages : string[]
 }
 

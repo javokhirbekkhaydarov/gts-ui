@@ -21,7 +21,7 @@ const tagAndAttribute = (routeItem: ISidebarItem): { tag: string; attribute: Rec
   }
 
   if (isContract?.value) {
-    return { tag: 'a', attribute: { href: routeItem.externalPath ?? routeItem.path } }
+    return { tag: 'a', attribute: { href: routeItem.path } }
   }
 
   if (routeItem.internal) {
